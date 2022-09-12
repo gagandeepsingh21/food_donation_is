@@ -1,0 +1,435 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+
+}
+
+.error {
+    background: none;
+}
+
+ul li {
+    list-style: none;
+
+}
+
+li a {
+    text-decoration: none;
+    font-size: 16px;
+
+
+}
+
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 5px 5px;
+    height: 80px;
+    background: #333;
+
+}
+
+label {
+    background: none;
+}
+
+.nav-logo {
+    padding: 10px 10px;
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+    background: none;
+}
+
+.nav-item a {
+    color: white;
+    background: none;
+}
+
+.nav-item {
+    margin-left: 25px;
+    padding: 10px;
+    text-decoration: none;
+    background: none;
+
+
+
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    background: none;
+    align-items: center;
+}
+
+.nav-link a {
+    color: white;
+}
+
+.nav-link {
+    margin-left: auto;
+    padding: 15px;
+    font-size: 16px;
+    color: white;
+    background: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.nav-link:hover {
+    font-size: 16px;
+    color: white;
+    border-radius: 5px;
+    padding: 17px;
+    transition: 0.3s ease-in-out;
+
+}
+
+
+
+p>a {
+    text-decoration: none;
+    color: black;
+
+}
+
+.scrollup {
+
+    text-align: right;
+    margin: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+
+}
+
+.scrollup.active {
+    bottom: 32px;
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Login styles */
+.loginbox {
+    position: absolute;
+    background: none;
+    background-color: white;
+    padding: 35px 45px 50px 50px;
+
+    scroll-behavior: smooth;
+    width: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    overflow: hidden;
+    box-sizing: border-box;
+    z-index: 2;
+    flex-direction: column;
+
+}
+
+.signupbox {
+
+    position: absolute;
+    background: none;
+    background-color: white;
+    padding: 35px 45px 50px 50px;
+    height: 650px;
+    scroll-behavior: smooth;
+    width: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    overflow: hidden;
+    box-sizing: border-box;
+    z-index: 2;
+    flex-direction: column;
+
+
+}
+
+.signupbox h1 {
+    text-align: center;
+    font-size: xx-large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    margin-bottom: 10px;
+    background: none;
+
+}
+
+.signupbox input {
+    width: 100%;
+    margin-bottom: 2px;
+    margin-right: 1pc;
+
+}
+
+.loginbox h1 {
+    text-align: center;
+    font-size: xx-large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    margin-bottom: 20px;
+    background: none;
+
+}
+
+.loginbox input {
+    width: 100%;
+    margin-bottom: 5px;
+    margin-right: 1pc;
+
+}
+
+.signupbox input[type="text"],
+input[type="Password"] {
+    border: 1px solid black;
+    border-radius: 5px;
+    background: whitesmoke;
+    outline: none;
+    height: 35px;
+    padding: 20px 15px;
+    color: black;
+    font-size: 15px;
+
+}
+
+.loginbox input[type="text"],
+input[type="Password"] {
+    border: 1px solid black;
+    border-radius: 5px;
+    background: whitesmoke;
+    outline: none;
+    height: 45px;
+    padding: 20px 15px;
+    color: black;
+    font-size: 15px;
+
+}
+
+ul li {
+    list-style: none;
+
+}
+
+li a {
+    text-decoration: none;
+    font-size: 16px;
+
+
+}
+
+.signup {
+    text-decoration: underline;
+    color: blue;
+    background: none;
+}
+
+.signup:visited {
+    text-decoration: underline;
+    background: none;
+    color: blue;
+}
+
+.btn {
+    border: none;
+    outline: none;
+    height: 40px;
+    width: 250px;
+    background: blue;
+    color: White;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    left: 27%;
+    transition: 0.5s;
+    position: absolute;
+    font-weight: bolder;
+}
+
+.btn:hover {
+    cursor: pointer;
+    height: 40px;
+    width: 250px;
+
+}
+
+::placeholder {
+    color: rgba(12, 11, 11, 0.299);
+    margin-bottom: 2px;
+
+}
+
+/* end of log in styles */
+@media only screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        background: none;
+    }
+
+    .bar {
+        display: block;
+        height: 3px;
+        width: 25px;
+        background: white;
+        margin: 5px;
+
+
+    }
+
+    .bar:hover {
+        display: block;
+        height: 3px;
+        width: 25px;
+        background: white;
+        margin: 5px;
+        cursor: pointer;
+
+
+    }
+
+    .nav-logo {
+
+        color: white;
+        font-size: 20px;
+
+    }
+
+    .loginbox {
+        position: absolute;
+        background: white;
+        padding: 35px 45px 50px 50px;
+        height: fit-content;
+        width: fit-content;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 1px solid black;
+        border-radius: 5px;
+        overflow: hidden;
+        box-sizing: border-box;
+        z-index: 2;
+        flex-direction: column;
+        margin: 0px 20px 5px 0px;
+
+    }
+
+    .btn {
+        border: none;
+        outline: none;
+        height: 40px;
+        width: 200px;
+        background: blue;
+        color: White;
+        font-size: 18px;
+        cursor: pointer;
+        border-radius: 5px;
+        left: 25%;
+        transition: 0.5s;
+        position: absolute;
+        font-weight: bolder;
+    }
+
+    .btn:hover {
+        cursor: pointer;
+        height: 40px;
+        width: 200px;
+
+    }
+
+    .loginbox input {
+        width: 100%;
+        margin-bottom: 15px;
+        margin-left: 15px;
+
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: -110%;
+        margin-top: 12%;
+        flex-direction: column;
+        color: white;
+        width: 100%;
+        text-align: center;
+        transition: 0.7s ease-in-out;
+        z-index: 10000;
+        background: linear-gradient(120deg, #2980b9, #8e44ad);
+
+    }
+
+    .nav-menu.active {
+        top: 0;
+    }
+
+    .nav-item {
+        margin: 1rem 0;
+        border-bottom: 1px solid white;
+        width: 120%;
+        padding-bottom: 20px;
+
+
+    }
+
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+        transition: 0.3s;
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+        transition: 0.3s
+    }
+}
+
+#home-info {
+    height: 400px;
+}
+
+#home-info .info-img {
+    float: left;
+    width: 50%;
+    background: url('photo-1.jpg') no-repeat;
+    min-height: 100%;
+
+}
+
+#home-info .info-content {
+    float: right;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    padding: 50px 30px;
+    overflow: hidden;
+
+}
+
+#home-info .info-content p {
+    padding-bottom: 30px;
+}
+
+.bg-dark {
+    background: #333;
+    color: #fff;
+}
+
+.text-primary {
+    color: #f7c08a;
+}
+
+.h2-tag {
+    margin-bottom: 10px;
+}
