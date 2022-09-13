@@ -16,6 +16,8 @@ class UserController extends Controller
           $request->validate([
               'name'=>'required',
               'email'=>'required|email|unique:users,email',
+              'pnumber'=>'required',
+              'address' => 'required',
               'role' => 'required',
               'password'=>'required|min:4|max:30',
               'cpassword'=>'required|min:4|max:30|same:password'
@@ -24,6 +26,8 @@ class UserController extends Controller
           $user = new User();
           $user->name = $request->name;
           $user->email = $request->email;
+          $user->pnumber = $request->pnumber;
+          $user->address = $request->address;
           $user->password = \Hash::make($request->password);
           $user->role = $request->role;
           $save = $user->save();

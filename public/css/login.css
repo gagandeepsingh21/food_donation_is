@@ -3,6 +3,7 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
 
+
 }
 
 .error {
@@ -121,7 +122,7 @@ p>a {
     padding: 35px 45px 50px 50px;
 
     scroll-behavior: smooth;
-    width: 600px;
+    width: 500px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -134,7 +135,7 @@ p>a {
 }
 
 .signupbox {
-
+    border: 1px solid black;
     position: absolute;
     background: none;
     background-color: white;
@@ -152,6 +153,11 @@ p>a {
     flex-direction: column;
 
 
+}
+.register {
+    Width:5px;
+    Height:10px;
+    Overflow-x: scroll;
 }
 
 .signupbox h1 {

@@ -10,7 +10,7 @@
         
 
 
-         @if( auth()->check() )
+         @if( auth()->check())
                     {{-- <h3><p>{{ auth()->user()->role }} Dashboard</h3> --}}
                     <h3>Welcome, {{ auth()->user()->name }}</h3>
 
@@ -18,26 +18,35 @@
         <div class="row">
             <div class="col-md-6 offset-md-3" style="margin-top: 45px">
                  <h4>Admin Dashboard</h4><hr>
-                 <table class="table table-striped table-inverse table-responsive">
-                     <thead class="thead-inverse">
-                         <tr>
-                             <th>Name</th>
-                             <th>Email</th>
-                             <th>Action</th>
+                  <label for="name" style="color:#130200;">Fullname</label>
+                <input type="text"class="form-control" name="name" placeholder="Fullname" value="{{ auth()->user()->name }}" >
+               
+                
+                <label for="email">Email</label>
+                <input type="text" name="email" class="form-control" placeholder="Email" value="{{ auth()->user()->email }}">
 
-                         </tr>
-                         </thead>
-                         <tbody>
-                             <tr>
-                                 <td>{{ Auth::guard('web')->user()->name }}</td>
-                                 <td>{{ Auth::guard('web')->user()->email }}</td>
-                                 <td>
-                                     <a href="{{ route('user.logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
-                                     <form action="{{ route('user.logout') }}" method="post" class="d-none" id="logout-form">@csrf</form>
-                                 </td>
-                             </tr>
-                         </tbody>
-                 </table>
+                <label for="role">Role</label>
+                <input type="text" name="role" class="form-control" value="{{ auth()->user()->role }}" readonly>
+      
+
+                {{-- {{-- <label for="Phonenumber">Phone Number</label>
+                <input type="number" name="pnumber" placeholder="Phone number" value="{{ old('pnumber') }}"><br>
+                <span class="text-danger">@error('pnumber') {{ $message }} @enderror</span><br> --}}
+
+                {{-- <label for="Address">Address details</label>
+                <input type="text" name="address" placeholder="address" value="{{ old('address') }}"><br>
+                <span class="text-danger">@error('address') {{ $message }} @enderror</span><br>  --}}
+
+                 {{-- <label for="role">Role</label>
+                <input type="text" name="role" value="donor" readonly><br><br> --}}
+
+                <label for="Password">Password</label>
+                <input type="Password" name="password" class="form-control" placeholder="Password" value="{{ auth()->user()->password }}"><br>
+                
+
+                
+                 
+                <button type="submit" class="btn btn-primary">Update</button><br><br>
             </div>
         </div>
     </div>
@@ -59,26 +68,36 @@
                     <div class="container">
         <div class="row">
             <div class="col-md-6 offset-md-3" style="margin-top: 45px">
-                 <h4>user Dashboard</h4><hr>
-                 <table class="table table-striped table-inverse table-responsive">
-                     <thead class="thead-inverse">
-                         <tr>
-                             <th>Name</th>
-                             <th>Email</th>
-                             <th>Action</th>
-                         </tr>
-                         </thead>
-                         <tbody>
-                             <tr>
-                                 <td>{{ Auth::guard('web')->user()->name }}</td>
-                                 <td>{{ Auth::guard('web')->user()->email }}</td>
-                                 <td>
-                                     <a href="{{ route('user.logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
-                                     <form action="{{ route('user.logout') }}" method="post" class="d-none" id="logout-form">@csrf</form>
-                                 </td>
-                             </tr>
-                         </tbody>
-                 </table>
+                 <h4>Organization Dashboard</h4><hr>
+                  <label for="name" style="color:#130200;">Fullname</label>
+                <input type="text"class="form-control" name="name" placeholder="Fullname" value="{{ auth()->user()->name }}" >
+               
+                
+                <label for="email">Email</label>
+                <input type="text" name="email" class="form-control" placeholder="Email" value="{{ auth()->user()->email }}">
+
+                <label for="role">Role</label>
+                <input type="text" name="role" class="form-control" value="{{ auth()->user()->role }}" readonly>
+      
+
+                {{-- {{-- <label for="Phonenumber">Phone Number</label>
+                <input type="number" name="pnumber" placeholder="Phone number" value="{{ old('pnumber') }}"><br>
+                <span class="text-danger">@error('pnumber') {{ $message }} @enderror</span><br> --}}
+
+                {{-- <label for="Address">Address details</label>
+                <input type="text" name="address" placeholder="address" value="{{ old('address') }}"><br>
+                <span class="text-danger">@error('address') {{ $message }} @enderror</span><br>  --}}
+
+                 {{-- <label for="role">Role</label>
+                <input type="text" name="role" value="donor" readonly><br><br> --}}
+
+                <label for="Password">Password</label>
+                <input type="Password" name="password" class="form-control" placeholder="Password" value="{{ auth()->user()->password }}"><br>
+                
+
+                
+                 
+                <button type="submit" class="btn btn-primary">Update</button><br><br>
             </div>
         </div>
     </div>
@@ -98,29 +117,39 @@
                     <h3><p>{{ auth()->user()->role }} Dashboard</h3>    
                     <p>Welcome, {{ auth()->user()->name }}</p>
 
-                    <div class="container">
+     <div class="container">
         <div class="row">
             <div class="col-md-6 offset-md-3" style="margin-top: 45px">
-                 <h4>user Dashboard</h4><hr>
-                 <table class="table table-striped table-inverse table-responsive">
-                     <thead class="thead-inverse">
-                         <tr>
-                             <th>Name</th>
-                             <th>Email</th>
-                             <th>Action</th>
-                         </tr>
-                         </thead>
-                         <tbody>
-                             <tr>
-                                 <td>{{ Auth::guard('web')->user()->name }}</td>
-                                 <td>{{ Auth::guard('web')->user()->email }}</td>
-                                 <td>
-                                     <a href="{{ route('user.logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
-                                     <form action="{{ route('user.logout') }}" method="post" class="d-none" id="logout-form">@csrf</form>
-                                 </td>
-                             </tr>
-                         </tbody>
-                 </table>
+                 <h4>Donor Dashboard</h4><hr>
+             <label for="name" style="color:#130200;">Fullname</label>
+                <input type="text"class="form-control" name="name" placeholder="Fullname" value="{{ auth()->user()->name }}" >
+               
+                
+                <label for="email">Email</label>
+                <input type="text" name="email" class="form-control" placeholder="Email" value="{{ auth()->user()->email }}">
+
+                <label for="role">Role</label>
+                <input type="text" name="role" class="form-control" value="{{ auth()->user()->role }}" readonly>
+      
+
+                {{-- {{-- <label for="Phonenumber">Phone Number</label>
+                <input type="number" name="pnumber" placeholder="Phone number" value="{{ old('pnumber') }}"><br>
+                <span class="text-danger">@error('pnumber') {{ $message }} @enderror</span><br> --}}
+
+                {{-- <label for="Address">Address details</label>
+                <input type="text" name="address" placeholder="address" value="{{ old('address') }}"><br>
+                <span class="text-danger">@error('address') {{ $message }} @enderror</span><br>  --}}
+
+                 {{-- <label for="role">Role</label>
+                <input type="text" name="role" value="donor" readonly><br><br> --}}
+
+                <label for="Password">Password</label>
+                <input type="Password" name="password" class="form-control" placeholder="Password" value="{{ auth()->user()->password }}"><br>
+                
+
+                
+                 
+                <button type="submit" class="btn btn-primary">Update</button><br><br>
             </div>
         </div>
     </div>

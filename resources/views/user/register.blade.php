@@ -28,7 +28,8 @@
         </style>
     </head>
 <body>
-   
+   <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+             
         <form action="{{ route('user.create') }}" method="post" >
 
             @csrf
@@ -50,23 +51,31 @@
                
 
                 <label for="name" style="color:#130200;">Fullname</label>
-                <input type="text" name="name" placeholder="Fullname" value="{{ old('name') }}" ><br>
-                <span class="text-danger">@error('name') {{ $message }} @enderror</span><br>
+                <input type="text" name="name" class="form-control" placeholder="Fullname" value="{{ old('name') }}" >
+                <span class="text-danger">@error('name') {{ $message }} @enderror</span>
                 
                 <label for="email">Email</label>
-                <input type="text" name="email" placeholder="Email" value="{{ old('email') }}"><br>
-                 <span class="text-danger">@error('email') {{ $message }} @enderror</span><br>
+                <input type="text" name="email" class="form-control" placeholder="Email" value="{{ old('email') }}">
+                <span class="text-danger">@error('email') {{ $message }} @enderror</span>
+
+                <label for="Phonenumber">Phone Number</label>
+                <input type="number" name="pnumber" class="form-control" placeholder="Phone number" value="{{ old('pnumber') }}">
+                <span class="text-danger">@error('pnumber') {{ $message }} @enderror</span>
+
+                <label for="Address">Address details</label>
+                <input type="text" name="address" class="form-control" placeholder="address" value="{{ old('address') }}">
+                <span class="text-danger">@error('address') {{ $message }} @enderror</span>
 
                  {{-- <label for="role">Role</label>
                 <input type="text" name="role" value="donor" readonly><br><br> --}}
 
                 <label for="Password">Password</label>
-                <input type="Password" name="password" placeholder="Password" value="{{ old('password') }}"><br>
-                 <span class="text-danger">@error('password') {{ $message }} @enderror</span><br>
+                <input type="Password" name="password" class="form-control" placeholder="Password" value="{{ old('password') }}">
+                 <span class="text-danger">@error('password') {{ $message }} @enderror</span>
 
                  <label for="Confirm Password">Confirm Password</label>
-                <input type="Password" name="cpassword" placeholder="Confirm Password"  value="{{ old('cpassword') }}"><br>
-                 <span class="text-danger">@error('cpassword') {{ $message }} @enderror</span><br>
+                <input type="Password" name="cpassword" class="form-control" placeholder="Confirm Password"  value="{{ old('cpassword') }}"><br>
+                 <span class="text-danger">@error('cpassword') {{ $message }} @enderror</span>
                  
                 <button type="submit" class="btn btn-primary">Register User</button><br><br>
 
@@ -76,6 +85,8 @@
             </div>
         
         </form>
+
+   </div>
         
 </body>
 </html>
