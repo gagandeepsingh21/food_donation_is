@@ -1,3 +1,4 @@
+ 
   <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -64,10 +65,10 @@
 
         
         <div class="list-group list-group-flush">
-            <a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a>
-            <a href="#" class="list-group-item list-group-item-action bg-light">View user Details</a>
-            <a href="#" class="list-group-item list-group-item-action bg-light">Add User</a>
-            <a href="#" class="list-group-item list-group-item-action bg-light">Reports</a>
+            <a href="{{ route('user.userdetails') }}" class="list-group-item list-group-item-action bg-light">Dashboard</a>
+            <a href="{{ route('user.userdetails') }}" class="list-group-item list-group-item-action bg-light">View user Details</a>
+            <a href="{{ route('user.adduser') }}" class="list-group-item list-group-item-action bg-light">Add User</a>
+            <a href="{{ route('user.reports') }}" class="list-group-item list-group-item-action bg-light">Reports</a>
             <a href="{{ route('user.logout') }}" class="list-group-item list-group-item-action bg-light" 
             onclick="event.preventDefault();document.getElementById('logout-form').submit();" >Logout</a>
                                      <form action="{{ route('user.logout') }}" method="post" class="d-none" id="logout-form">@csrf</form>

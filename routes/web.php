@@ -28,12 +28,15 @@ Route::prefix('user')->name('user.')->group(function(){
         Route::view('/register', 'user.register')->name('userRegister');
         Route::post('/check',[UserController::class,'check'])->name('check');
         Route::post('/create',[UserController::class,'create'])->name('create');
-        Route::view('/adduser',[UserController::class,'create'])->name('adduser');
+        
     });
 
     Route::middleware(['auth','PreventBackHistory'])->group(function(){
         Route::view('/dashboard','user.dashboard')->name('dashboard');
         Route::post('/logout', [UserController::class,'logout'])->name('logout');
+        Route::view('/reports', 'user.reports')->name('reports');
+        Route::view('/adduser','user.adduser')->name('adduser');
+        Route::view('/userdetails', 'user.userdetails')->name('userdetails');
     });
 
 });

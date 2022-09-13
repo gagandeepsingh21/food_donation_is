@@ -96,4 +96,4 @@
             </ul>
             </div> --}}
         </nav>
-        <p> Add new user page</p>
+        <p> User Details page</p>
