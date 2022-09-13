@@ -55,19 +55,32 @@
         <div class="d-flex" id="wrapper">
         <!-- Sidebar -->
         <div class="bg-light border-right" id="sidebar-wrapper">
-        <div class="sidebar-heading">Admins view</div>
+        <div class="sidebar-heading">
+            @if( auth()->check() )
+                    
+                    <h3><p>{{ auth()->user()->role }} Dashboard</h3>    
+                    <h4>Welcome, {{ auth()->user()->name }}</h4></div>
+                @endif
+
+        
         <div class="list-group list-group-flush">
             <a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a>
             <a href="#" class="list-group-item list-group-item-action bg-light">View user Details</a>
             <a href="#" class="list-group-item list-group-item-action bg-light">Add User</a>
             <a href="#" class="list-group-item list-group-item-action bg-light">Reports</a>
+            <a href="{{ route('user.logout') }}" class="list-group-item list-group-item-action bg-light" 
+            onclick="event.preventDefault();document.getElementById('logout-form').submit();" >Logout</a>
+                                     <form action="{{ route('user.logout') }}" method="post" class="d-none" id="logout-form">@csrf</form>
         </div>
         </div>
+
+
+        
          <div id="page-content-wrapper">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
             <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
             {{-- <h3 style="margin: 10px">Welcome, {{ auth()->user()->name }}</h3> --}}
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            {{-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -78,6 +91,6 @@
                 
                 </li>
                 
-            
-            </div>
+            </ul>
+            </div> --}}
         </nav>

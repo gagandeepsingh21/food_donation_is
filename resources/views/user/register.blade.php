@@ -66,8 +66,8 @@
                 <input type="text" name="address" class="form-control" placeholder="address" value="{{ old('address') }}">
                 <span class="text-danger">@error('address') {{ $message }} @enderror</span>
 
-                 {{-- <label for="role">Role</label>
-                <input type="text" name="role" value="donor" readonly><br><br> --}}
+                 <label for="role">Role</label>
+                <input type="text" name="role" value="donor" readonly>
 
                 <label for="Password">Password</label>
                 <input type="Password" name="password" class="form-control" placeholder="Password" value="{{ old('password') }}">
@@ -77,7 +77,7 @@
                 <input type="Password" name="cpassword" class="form-control" placeholder="Confirm Password"  value="{{ old('cpassword') }}"><br>
                  <span class="text-danger">@error('cpassword') {{ $message }} @enderror</span>
                  
-                <button type="submit" class="btn btn-primary">Register User</button><br><br>
+                <button type="submit" class="btn btn-primary" style="left:32%;">Register User</button><br><br>
 
                 Already have an account? <a href="{{route('user.userLogin')}}" class="signup">Log in</a>
                 
