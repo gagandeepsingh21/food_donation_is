@@ -28,12 +28,12 @@ class UserController extends Controller
           $user->email = $request->email;
           $user->pnumber = $request->pnumber;
           $user->address = $request->address;
-          $user->password = \Hash::make($request->password);
+          $user->password = $request->password;
           $user->role = $request->role;
           $save = $user->save();
 
           if( $save ){
-              return redirect()->back()->with('success','You are now registered successfully');
+              return redirect()->route('user.userLogin');
           }else{
               return redirect()->back()->with('fail','Something went wrong, failed to register');
           }
@@ -46,10 +46,10 @@ class UserController extends Controller
               'password'=>'required|min:4|max:30'
         ]);
 
-        $cred = $request->only('email','password');
+        $creds = $request->only('email','password');
         
-        if( Auth::attempt($cred)){
-            return redirect()->route('user.dashboard')->with('login successfull');
+        if( Auth::guard('web')->attempt($creds)){
+            return redirect()->route('user.dashboard');
         }else{
             return redirect()->route('user.userLogin')->with('fail','Incorrect credentials');
         }

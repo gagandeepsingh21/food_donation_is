@@ -64,8 +64,8 @@
 
         
         <div class="list-group list-group-flush">
-            <a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a>
-            <a href="#" class="list-group-item list-group-item-action bg-light">Post dontation info</a>
+            <a href="{{ route('user.dashboard') }}" class="list-group-item list-group-item-action bg-light">Dashboard</a>
+            <a href="{{ route('user.postdonation') }}" class="list-group-item list-group-item-action bg-light">Post dontation info</a>
             <a href="#" class="list-group-item list-group-item-action bg-light">View Donation Created</a>
             <a href="#" class="list-group-item list-group-item-action bg-light">View Donations made</a>
             <a href="#" class="list-group-item list-group-item-action bg-light">Reports</a>
