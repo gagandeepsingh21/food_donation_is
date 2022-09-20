@@ -1,6 +1,7 @@
-@if(auth::user()->role == 'organization')
-
+@if (Auth::user()->role == 'organization')
 @include('sidebar.organization')
- <p>Post about donation </p>
 
-@endif 
+hello
+
+        
+@endif

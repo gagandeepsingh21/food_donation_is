@@ -14,8 +14,8 @@
                     {{-- <h3><p>{{ auth()->user()->role }} Dashboard</h3> --}}
                     {{-- <h3>Welcome, {{ auth()->user()->name }}</h3> --}}
 
-                    <div class="container">
         <div class="row">
+            <h2 class="col-md-6 offset-md-5" style="margin-top:10px;">My Details</h2>
             <div class="col-md-6 offset-md-3" style="margin-top: 10px">
                  {{-- <h4>Organization Dashboard</h4><hr> --}}
                   <label for="name" style="color:#130200;">Fullname</label>
@@ -34,14 +34,15 @@
                 {{-- <span class="text-danger">@error('pnumber') {{ $message }} @enderror</span><br> --}}
 
                 <label for="Address">Address details</label>
-                <input type="text" name="address" class="form-control" placeholder="address" value="{{ auth()->user()->address }}"><br>
+                <iframe width="100%" height="250" src="https://maps.google.com/maps?q={{ auth()->user()->address }}&output=embed"></iframe>  
+                 <input type="text" name="address" class="form-control" placeholder="address" value="{{ auth()->user()->address }}"><br>
                 {{-- <span class="text-danger">@error('address') {{ $message }} @enderror</span><br>  --}}
 
-                <label for="role">Role</label>
+                {{-- <label for="role">Role</label>
                 <input type="text" name="role" value="donor" readonly><br><br>
 
                 <label for="Password">Password</label>
-                <input type="Password" name="password" class="form-control" placeholder="Password" value="{{ auth()->user()->password }}"><br>
+                <input type="Password" name="password" class="form-control" placeholder="Password" value="{{ auth()->user()->password }}"><br> --}}
                 
 
                 
@@ -50,7 +51,6 @@
             </div>
         </div>
     </div>
-         </div>
        
             
             @endif
@@ -85,14 +85,15 @@
                 {{-- <span class="text-danger">@error('pnumber') {{ $message }} @enderror</span><br> --}}
 
                 <label for="Address">Address details</label>
-                <input type="text" name="address" class="form-control" placeholder="address" value="{{ auth()->user()->address }}"><br>
+                <iframe width="100%" height="250" src="https://maps.google.com/maps?q={{ auth()->user()->address }}&output=embed"></iframe>  
+                 <input type="text" name="address" class="form-control" placeholder="address" value="{{ auth()->user()->address }}"><br>
                 {{-- <span class="text-danger">@error('address') {{ $message }} @enderror</span><br>  --}}
 
-                <label for="role">Role</label>
+                {{-- <label for="role">Role</label>
                 <input type="text" name="role" value="donor" readonly><br><br>
 
                 <label for="Password">Password</label>
-                <input type="Password" name="password" class="form-control" placeholder="Password" value="{{ auth()->user()->password }}"><br>
+                <input type="Password" name="password" class="form-control" placeholder="Password" value="{{ auth()->user()->password }}"><br> --}}
                 
 
                 
@@ -137,15 +138,19 @@
                 {{-- <span class="text-danger">@error('pnumber') {{ $message }} @enderror</span><br> --}}
 
                 <label for="Address">Address details</label>
-                <input type="text" name="address" class="form-control" placeholder="address" value="{{ auth()->user()->address }}"><br>
+                <iframe width="100%" height="250" src="https://maps.google.com/maps?q={{ auth()->user()->address }}&output=embed"></iframe> 
+                 <input type="text" name="address" class="form-control" placeholder="address" value="{{ auth()->user()->address }}"><br> 
+
+                
+                
                 {{-- <span class="text-danger">@error('address') {{ $message }} @enderror</span><br>  --}}
 
-                <label for="role">Role</label>
+                {{-- <label for="role">Role</label>
                 <input type="text" name="role" value="donor" readonly><br><br>
 
                 <label for="Password">Password</label>
                 <input type="Password" name="password" class="form-control" placeholder="Password" value="{{ auth()->user()->password }}"><br>
-                
+                 --}}
 
                 
                  

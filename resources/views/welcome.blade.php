@@ -30,6 +30,7 @@
                         <a href="{{ route('user.userLogin') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
 
                         <a href="{{ route('user.userRegister') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+                         <a href="{{ route('user.userContact') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Contact for Registeration</a>
 
                         {{-- @if (Route::has('register'))
                             <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>

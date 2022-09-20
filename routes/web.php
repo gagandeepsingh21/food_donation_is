@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\UserController;
+use App\Http\Controllers\User\ContactController;
+use App\Http\Controllers\User\Controller;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -26,9 +28,12 @@ Route::prefix('user')->name('user.')->group(function(){
 
     Route::middleware(['guest:web','PreventBackHistory'])->group(function(){
         Route::view('/login', 'user.login')->name('userLogin');
-        Route::view('/register', 'user.register')->name('userRegister');
+        Route::view('/register', 'user.register')->name('userRegister'); 
+        Route::view('/contact', 'user.contact')->name('userContact');
         Route::post('/check',[UserController::class,'check'])->name('check');
         Route::post('/create',[UserController::class,'create'])->name('create');
+        Route::post('/send',[ContactController::class,'send'])->name('send');
+
         
     });
 

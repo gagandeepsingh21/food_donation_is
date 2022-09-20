@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Contact form for organization registeration </title>
 
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -30,13 +30,13 @@
 <body>
    <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
              
-        <form action="{{ route('user.create') }}" method="post" >
+        <form action="{{ route('user.send') }}" method="post" >
 
             @csrf
 
             <div class="signupbox">
 
-                <h1>Register</h1>
+                <h1>Contact form for organization Registeration</h1>
                 
              @if (Session::get('success'))
                 <div class="alert alert-success">
@@ -50,8 +50,8 @@
             @endif
                
 
-                <label for="name" style="color:#130200;">Fullname</label>
-                <input type="text" name="name" class="form-control" placeholder="Fullname" value="{{ old('name') }}" >
+                <label for="organization_name" style="color:#130200;">Organization name</label>
+                <input type="text" name="name" class="form-control" placeholder="Organization name" value="{{ old('orgname') }}" >
                 <span class="text-danger">@error('name') {{ $message }} @enderror</span>
                 
                 <label for="email">Email</label>
@@ -66,20 +66,13 @@
                 <input type="text" name="address" class="form-control" placeholder="address" value="{{ old('address') }}">
                 <span class="text-danger">@error('address') {{ $message }} @enderror</span>
 
-                 {{-- <label for="role">Role</label> --}}
-                <input type="text" name="role" value="donor" hidden>
+                <label for="About">About</label>
+                <textarea name="about" rows="4" cols="60" placeholder="Write here about your organization..." class="form-control"></textarea><br>
 
-                <label for="Password">Password</label>
-                <input type="Password" name="password" class="form-control" placeholder="Password" value="{{ old('password') }}">
-                 <span class="text-danger">@error('password') {{ $message }} @enderror</span>
+            
+                <button type="submit" class="btn btn-primary" style="left:25%; width:50%;">Contact for Registeration</button><br><br>
 
-                 <label for="Confirm Password">Confirm Password</label>
-                <input type="Password" name="cpassword" class="form-control" placeholder="Confirm Password"  value="{{ old('cpassword') }}"><br>
-                 <span class="text-danger">@error('cpassword') {{ $message }} @enderror</span>
-                 
-                <button type="submit" class="btn btn-primary" style="left:32%;">Register User</button><br><br>
 
-                Already have an account? <a href="{{route('user.userLogin')}}" class="signup">Log in</a>
                 
         
             </div>
