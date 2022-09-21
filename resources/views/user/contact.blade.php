@@ -51,7 +51,7 @@
                
 
                 <label for="organization_name" style="color:#130200;">Organization name</label>
-                <input type="text" name="name" class="form-control" placeholder="Organization name" value="{{ old('orgname') }}" >
+                <input type="text" name="orgname" class="form-control" placeholder="Organization name" value="{{ old('orgname') }}" >
                 <span class="text-danger">@error('name') {{ $message }} @enderror</span>
                 
                 <label for="email">Email</label>

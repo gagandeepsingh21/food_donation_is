@@ -39,11 +39,12 @@ Route::prefix('user')->name('user.')->group(function(){
 
     Route::middleware(['auth:web','PreventBackHistory'])->group(function(){
         Route::view('/dashboard','user.dashboard')->name('dashboard');
-        Route::post('/logout', [UserController::class,'logout'])->name('logout');
+        Route::post('/logout', [UserController::class, 'logout'])->name('logout');
         Route::view('/reports', 'user.reports')->name('reports');
         Route::view('/adduser','user.adduser')->name('adduser');
         Route::view('/userdetails', 'user.userdetails')->name('userdetails');
         Route::view('/postdonation', 'user.postdonation')->name('postdonation');
+        Route::get('/viewcontacts', [ContactController::class, 'showdetails'])->name('viewcontacts');
         
 
     });
