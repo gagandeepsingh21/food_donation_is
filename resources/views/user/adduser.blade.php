@@ -4,7 +4,7 @@
 
 <link rel="stylesheet" href="{{ asset('bootstrap.min.css') }}">
 
- <form action="{{ route('user.adduser') }}" method="post" >
+ <form action="{{ route('user.addadmin') }}" method="post" >
 
             @csrf
 
@@ -41,11 +41,7 @@
                 <span class="text-danger">@error('address') {{ $message }} @enderror</span><br>
 
                  <label for="role">Role</label>
-                {{-- <input type="text" name="role" value="donor" hidden> --}}
-                <select name="role" id="role" class="form-control">
-                    <option value="admin">Admin</option>
-                    <option value="Organization">Organization</option>
-                </select><br>
+                <input type="text" name="role" value="admin" class="form-control" readonly><br>
 
                 <label for="Password">Password</label>
                 <input type="Password" name="password" class="form-control" placeholder="Password" value="{{ old('password') }}">

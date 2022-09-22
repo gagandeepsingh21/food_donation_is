@@ -59,7 +59,7 @@
         <div class="sidebar-heading">
             @if( auth()->check() )
                     
-                    <h3><p>{{ auth()->user()->role }} Dashboard</h3>    
+                    <h4><p>{{ auth()->user()->role }} Dashboard</h4>    
                     <h4>Welcome, {{ auth()->user()->name }}</h4></div>
                 @endif
 
@@ -68,7 +68,7 @@
             <a href="{{ route('user.dashboard') }}" class="list-group-item list-group-item-action bg-light">Dashboard</a>
             <a href="{{ route('user.userdetails') }}" class="list-group-item list-group-item-action bg-light">View user Details</a>
             <a href="{{ route('user.adduser') }}" class="list-group-item list-group-item-action bg-light">Add User</a>
-            <a href="{{ route('user.viewcontacts') }}" class="list-group-item list-group-item-action bg-light">Organizations Contacts</a>
+            <a href="{{ route('user.viewcontacts') }}" class="list-group-item list-group-item-action bg-light">Users Feedback</a>
             <a href="{{ route('user.reports') }}" class="list-group-item list-group-item-action bg-light">Reports</a>
             <a href="{{ route('user.logout') }}" class="list-group-item list-group-item-action bg-light" 
             onclick="event.preventDefault();document.getElementById('logout-form').submit();" >Logout</a>

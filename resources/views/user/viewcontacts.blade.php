@@ -1,20 +1,20 @@
-@extends('master')
+@if (Auth::user()->role == 'admin')
+
+<title>Add User</title>
 
 @include('sidebar.admin')
 
-@section('content')
-
-     <h3>Organization contacts for registeration requests</h3>
+     <h3>Feedback from users</h3>
 
     <table class="table table-hover">
         <thead class="thead-dark">
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Orgnization name</th>
+                <th scope="col">Name</th>
                 <th scope="col">Email</th>
                 <th scope="col">Phone number</th>
                 <th scope="col">Address</th>
-                <th scope="col"> Organization Details</th>
+                <th scope="col">Message</th>
             </tr>
         </thead>
     
@@ -33,4 +33,4 @@
     </table>
 
 
-@endsection
+@endif

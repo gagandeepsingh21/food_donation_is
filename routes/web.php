@@ -42,7 +42,8 @@ Route::prefix('user')->name('user.')->group(function(){
         Route::post('/logout', [UserController::class, 'logout'])->name('logout');
         Route::view('/reports', 'user.reports')->name('reports');
         Route::view('/adduser','user.adduser')->name('adduser');
-        Route::view('/userdetails', 'user.userdetails')->name('userdetails');
+        Route::post('/addadmin',[UserController::class,'addadmin'])->name('addadmin');
+        Route::get('/userdetails', [UserController::class, 'showdetails'])->name('userdetails');
         Route::view('/postdonation', 'user.postdonation')->name('postdonation');
         Route::get('/viewcontacts', [ContactController::class, 'showdetails'])->name('viewcontacts');
         

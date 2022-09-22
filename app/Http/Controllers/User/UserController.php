@@ -55,6 +55,33 @@ class UserController extends Controller
         }
     }
 
+    function addadmin(Request $request){
+
+           $request->validate([
+              'name'=>'required',
+              'email'=>'required|email|unique:users,email',
+              'pnumber'=>'required|min:10',
+              'address' => 'required',
+              'role' => 'required',
+              'password'=>'required|min:4|max:30',
+              'cpassword'=>'required|min:4|max:30|same:password'
+          ]);
+
+        User::create($request->all());
+
+        return redirect()->route('user.dashboard');
+
+       
+    }
+
+   function showdetails(){
+        $users = User::where('role', '!=', 'admin')->get();
+
+        return view('user.userdetails',compact('users'))
+                ->with('i');
+                
+    }
+
     
     function logout(){
         Auth::guard('web')->logout();

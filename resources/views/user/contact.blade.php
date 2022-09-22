@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Contact form for organization registeration </title>
+        <title>Feedback form</title>
 
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -36,7 +36,7 @@
 
             <div class="signupbox">
 
-                <h1>Contact form for organization Registeration</h1>
+                <h1>Feedback Form</h1>
                 
              @if (Session::get('success'))
                 <div class="alert alert-success">
@@ -67,10 +67,10 @@
                 <span class="text-danger">@error('address') {{ $message }} @enderror</span>
 
                 <label for="About">About</label>
-                <textarea name="about" rows="4" cols="60" placeholder="Write here about your organization..." class="form-control"></textarea><br>
+                <textarea name="about" rows="4" cols="60" placeholder="Please do let us know what we could improve on...." class="form-control"></textarea><br>
 
             
-                <button type="submit" class="btn btn-primary" style="left:25%; width:50%;">Contact for Registeration</button><br><br>
+                <button type="submit" class="btn btn-primary" style="left:25%; width:50%;">Send Feedback</button><br><br>
 
 
                 

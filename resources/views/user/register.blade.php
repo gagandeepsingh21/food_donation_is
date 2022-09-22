@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Sign up</title>
 
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -66,8 +66,11 @@
                 <input type="text" name="address" class="form-control" placeholder="address" value="{{ old('address') }}">
                 <span class="text-danger">@error('address') {{ $message }} @enderror</span>
 
-                 {{-- <label for="role">Role</label> --}}
-                <input type="text" name="role" value="donor" hidden>
+                 <label for="role">Role</label>
+                 <select name="role" id="role" class="form-control">
+                    <option value="donor">Donor</option>
+                    <option value="organization">Organization</option>
+                </select>
 
                 <label for="Password">Password</label>
                 <input type="Password" name="password" class="form-control" placeholder="Password" value="{{ old('password') }}">
