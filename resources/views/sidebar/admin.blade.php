@@ -68,6 +68,8 @@
             <a href="{{ route('user.dashboard') }}" class="list-group-item list-group-item-action bg-light">Dashboard</a>
             <a href="{{ route('user.userdetails') }}" class="list-group-item list-group-item-action bg-light">View user Details</a>
             <a href="{{ route('user.adduser') }}" class="list-group-item list-group-item-action bg-light">Add User</a>
+            <a href="{{ route('user.verifiedpost') }}" class="list-group-item list-group-item-action bg-light">Verified donation posts</a>
+            <a href="{{ route('user.unverifiedposts') }}" class="list-group-item list-group-item-action bg-light">Unverified donation posts</a>
             <a href="{{ route('user.viewcontacts') }}" class="list-group-item list-group-item-action bg-light">Users Feedback</a>
             <a href="{{ route('user.reports') }}" class="list-group-item list-group-item-action bg-light">Reports</a>
             <a href="{{ route('user.logout') }}" class="list-group-item list-group-item-action bg-light" 
