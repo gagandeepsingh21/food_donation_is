@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\User\ContactController;
+use App\Http\Controllers\User\PostDonationController;
 use App\Http\Controllers\User\Controller;
 use Illuminate\Support\Facades\Auth;
 
@@ -45,6 +46,7 @@ Route::prefix('user')->name('user.')->group(function(){
         Route::post('/addadmin',[UserController::class,'addadmin'])->name('addadmin');
         Route::get('/userdetails', [UserController::class, 'showdetails'])->name('userdetails');
         Route::view('/postdonation', 'user.postdonation')->name('postdonation');
+        Route::post('/upload', [PostDonationController::class, 'upload'])->name('upload');
         Route::view('/verifiedpost','user.verifiedpost')->name('verifiedpost');
         Route::view('/unverifiedposts','user.unverifiedposts')->name('unverifiedposts');
         Route::get('/viewcontacts', [ContactController::class, 'showdetails'])->name('viewcontacts');
