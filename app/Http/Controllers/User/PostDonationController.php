@@ -28,4 +28,12 @@ class PostDonationController extends Controller
 
         
     }
+     function approve(){
+
+        $donations = Donation::where('isset', '=', '0')->get();
+
+        return view('user.unverifiedposts',compact('donations'))
+                ->with('i');
+                
+    }
 }
