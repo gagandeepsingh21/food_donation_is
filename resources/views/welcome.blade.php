@@ -19,18 +19,82 @@
                 font-family: 'Nunito', sans-serif;
             }
         </style>
+        <style>
+            h1{
+                color:pink;
+            }
+            .login {
+               
+                color:pink;
+                cursor: pointer;
+                font-weight: bold;
+               
+            }
+            .signup{
+                color:pink;
+                cursor: pointer;
+                font-weight: bold;
+            }
+
+            .contact{
+                color:pink;
+                cursor: pointer;
+                font-weight: bold;
+            }
+            #navSignup{
+                width: 20%;
+                border: none;
+                background-color: white;
+                color:black;
+                padding: 7px 15px;
+                font-size: 16px;
+                margin-left: 10px;
+                border-radius:5px;
+                cursor: pointer;
+                text-align: center;
+                font-weight: bold;
+            }
+            #navlogin{
+                width: 20%;
+                border: none;
+                color:white;
+                font-weight:bold;
+                padding: 5px;
+                font-size: 16px;
+                margin-left: 10px;
+                border-radius:5px;
+                cursor: pointer;
+                text-align: center;
+            }
+            #navfeedback{
+                width: 20%;
+                border: none;
+                color:white;
+                font-weight:bold;
+                padding: 5px;
+                font-size: 16px;
+                margin-left: 10px;
+                border-radius:5px;
+                cursor: pointer;
+                text-align: center;
+            }
+            
+
+            
+        
+            
+        </style>
     </head>
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             @if (Route::has('user.userLogin'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
+                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500">Home</a>
                     @else
-                        <a href="{{ route('user.userLogin') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
-
-                        <a href="{{ route('user.userRegister') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                         <a href="{{ route('user.userContact') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Contact for Registeration</a>
+                        <a href="{{ route('user.userRegister') }}" class="text-sm text-gray-700 dark:text-gray-500" id="navSignup">Register</a>
+                        <a href="{{ route('user.userLogin') }}" class="text-sm text-gray-700 dark:text-gray-500" id="navlogin">Log in</a>
+                         <a href="{{ route('user.userContact') }}" class="text-sm text-gray-700 dark:text-gray-500 " id="navfeedback">Feedback</a>
 
                         {{-- @if (Route::has('register'))
                             <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
@@ -38,6 +102,14 @@
                     @endauth
                 </div>
             @endif
+
+            <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
+                                <h1>Welcome to Food Donation </h1>
+                                <h3>Please click on the button below either to sign up and <a href="{{ route('user.userLogin') }}" class="login">Log in</a> to the system to make a donation or <a href="{{ route('user.userRegister') }}" class="signup">Register</a> your organization!</h3>
+                                <h3>Please do also leave a <a href="{{ route('user.userContact') }}" class="contact">feedback</a> so that we could continuously work on serving you better!</h3>
+                                
+                                
+                </div>
 
         </div>   
     </body>

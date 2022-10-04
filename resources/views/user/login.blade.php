@@ -25,10 +25,88 @@
                 font-family: 'Nunito', sans-serif;
             }
         </style>
+         <style>
+         
+            .login {
+               
+                color:pink;
+                cursor: pointer;
+                font-weight: bold;
+               
+            }
+            .signup{
+                color:pink;
+                cursor: pointer;
+                font-weight: bold;
+            }
+
+            .contact{
+                color:pink;
+                cursor: pointer;
+                font-weight: bold;
+            }
+            #navSignup{
+                width: 20%;
+                border: none;
+                background-color: white;
+                color:black;
+                padding: 7px 15px;
+                font-size: 16px;
+                margin-left: 10px;
+                border-radius:5px;
+                cursor: pointer;
+                text-align: center;
+                font-weight: bold;
+            }
+            #navlogin{
+                width: 20%;
+                border: none;
+                color:white;
+                font-weight:bold;
+                padding: 5px;
+                font-size: 16px;
+                margin-left: 10px;
+                border-radius:5px;
+                cursor: pointer;
+                text-align: center;
+            }
+            #navfeedback{
+                width: 20%;
+                border: none;
+                color:white;
+                font-weight:bold;
+                padding: 5px;
+                font-size: 16px;
+                margin-left: 10px;
+                border-radius:5px;
+                cursor: pointer;
+                text-align: center;
+            }
+            
+
+            
+        
+            
+        </style>
     </head>
 <body>
+    
     <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-        
+        @if (Route::has('user.userLogin'))
+                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                    @auth
+                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500">Home</a>
+                    @else
+                        <a href="{{ url('/') }}" class="text-sm text-gray-700 dark:text-gray-500" id="navSignup">Home</a>
+                        <a href="{{ route('user.userLogin') }}" class="text-sm text-gray-700 dark:text-gray-500" id="navlogin">Log in</a>
+                         <a href="{{ route('user.userContact') }}" class="text-sm text-gray-700 dark:text-gray-500 " id="navfeedback">Feedback</a>
+
+                        {{-- @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+                        @endif --}}
+                    @endauth
+                </div>
+            @endif
              
 
         <form action="{{ route('user.check') }}" method="post">

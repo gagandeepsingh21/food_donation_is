@@ -73,7 +73,7 @@
                 <button type="submit" class="btn btn-primary" style="left:25%; width:50%;">Send Feedback</button><br><br>
 
 
-                
+                Click here go back to the <a href="{{route('user.userLogin')}}" class="signup">Log in</a> page
         
             </div>
         
