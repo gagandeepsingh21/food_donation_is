@@ -45,6 +45,7 @@ Route::prefix('user')->name('user.')->group(function(){
         Route::view('/adduser','user.adduser')->name('adduser');
         Route::post('/addadmin',[UserController::class,'addadmin'])->name('addadmin');
         Route::get('/userdetails', [UserController::class, 'showdetails'])->name('userdetails');
+        Route::get('/unapprovedposts', [PostDonationController::class, 'unverified'])->name('unapprovedposts');
         Route::view('/postdonation', 'user.postdonation')->name('postdonation');
         Route::post('/upload', [PostDonationController::class, 'upload'])->name('upload');
         Route::get('/unverifiedposts',[PostDonationController::class, 'approve'])->name('unverifiedposts');

@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('donations', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
             $table->string('dtitle');
             $table->string('image');
             $table->Integer('dquantity');
@@ -23,6 +24,7 @@ return new class extends Migration
             $table->date('date');
             $table->boolean('isset')->default('0');
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
