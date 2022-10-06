@@ -41,7 +41,6 @@ class PostDonationController extends Controller
     }
     function unverified(){
         $user = Auth::user();
-        // return $user;
         $dons = Donation::where([
         ['user_id', '=', Auth::user()->id],
         ['isset', '=', 0]
