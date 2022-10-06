@@ -39,6 +39,7 @@ class PostDonationController extends Controller
                 ->with('i');
                 
     }
+    //view unapproved posts posted by a particular organization
     function unverified(){
         $user = Auth::user();
         $dons = Donation::where([
@@ -47,6 +48,20 @@ class PostDonationController extends Controller
         ])->orderBy('id','asc')->get();
          return view('user.unapprovedposts',compact('user','dons'))
                 ->with('i');
+
+    }
+    //change status
+    function changestatus($id){
+       $getStatus = Post::select('isset')->where('id',$id)->first();
+       if($getStatus->isset==0){
+            $status = 1;
+
+       }else{
+            $status = 0;
+       }
+       Post::where('id',$id)->update(['isset'=>$status]);
+       return redirect()->back()->with('status changed successfully!');
+
 
     }
 }

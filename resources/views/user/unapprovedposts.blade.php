@@ -14,6 +14,7 @@
                 <th scope="col">Location</th>
                 <th scope="col">Phone number</th>
                 <th scope="col">Date</th>
+                <th scope="col"> Status</th>
                 <th scope="col">Action</th>
             </tr>
         </thead>
@@ -30,7 +31,18 @@
                     <td>{{ $don->location}}</td>
                     <td>{{ $don->pnumber }}</td>
                     <td>{{ $don->date }}</td>
-                    <td>Action</td>
+                    <td>
+                        @if ($don->isset==0)
+                        <label class="btn btn-sm btn-danger">Inactive</label>
+                        @else
+                        <label class="btn btn-sm btn-success">Active</label>
+                            
+                        @endif
+
+                    </td>
+                    <td>
+                        <button class="btn btn-sm btn-primary">View</button>
+                    </td>
                 </tr>
             </tbody>
         @endforeach
