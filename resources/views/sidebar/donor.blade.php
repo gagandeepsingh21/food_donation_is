@@ -62,9 +62,8 @@
                     <h4>Welcome, {{ auth()->user()->name }}</h4></div>
                 @endif
         <div class="list-group list-group-flush">
-            <a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a>
-            <a href="#" class="list-group-item list-group-item-action bg-light">View user Details</a>
-            <a href="#" class="list-group-item list-group-item-action bg-light">Add User</a>
+             <a href="{{ route('user.dashboard') }}" class="list-group-item list-group-item-action bg-light">Dashboard</a>
+             <a href="{{ route('user.vdonationposts') }}" class="list-group-item list-group-item-action bg-light">View Donation Posts</a>
             <a href="#" class="list-group-item list-group-item-action bg-light">Reports</a>
             <a href="{{ route('user.logout') }}" class="list-group-item list-group-item-action bg-light" 
             onclick="event.preventDefault();document.getElementById('logout-form').submit();" >Logout</a>

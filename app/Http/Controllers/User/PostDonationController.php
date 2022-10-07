@@ -52,7 +52,7 @@ class PostDonationController extends Controller
     }
 
     function apporovedposts(){
-         $user = Auth::user();
+        $user = Auth::user();
         $dons = Donation::where([
         ['user_id', '=', Auth::user()->id],
         ['isset', '=', 1]
@@ -60,6 +60,15 @@ class PostDonationController extends Controller
          return view('user.approvedposts',compact('user','dons'))
                 ->with('i');
     }
+    //view approved posts for donors
+    function vposts(){
+        $dons = Donation::where('isset', '=', 1)->get();
+
+        return view('user.vdonationposts',compact('dons'))
+                ->with('i');
+
+    }
+
 
     //change status
     function changestatus($id){
