@@ -68,6 +68,13 @@ class PostDonationController extends Controller
                 ->with('i');
 
     }
+    //view approved posts for admins
+     function approveddetails(){
+        $donations = Donation::where('isset', '=', 1)->get();
+
+        return view('user.verifiedpost',compact('donations'))
+                ->with('i');
+    }
 
 
     //change status
@@ -83,15 +90,9 @@ class PostDonationController extends Controller
        return redirect()->back()->with('status changed successfully!');
     }
 
-    function approveddetails(){
-        $donations = Donation::where('isset', '=', 1)->get();
-
-        return view('user.verifiedpost',compact('donations'))
-                ->with('i');
-    }
 
     function disapprove($id){
-           $getStatus = Donation::select('isset')->where('id',$id)->first();
+       $getStatus = Donation::select('isset')->where('id',$id)->first();
        if($getStatus->isset==1){
             $status = 0;
 
