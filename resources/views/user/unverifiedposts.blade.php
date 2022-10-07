@@ -14,6 +14,7 @@
                 <th scope="col">Location</th>
                 <th scope="col">Phone number</th>
                 <th scope="col">Date</th>
+                <th scope="col">Status</th>
                 <th scope="col">Action</th>
             </tr>
         </thead>
@@ -23,14 +24,33 @@
                 <tr>
                     <td>{{ ++$i  }}</td>
                     <td>
-                      <img src="{{ asset('uploads/students/'.$donation->image) }}" width="50px" height="50px" alt="donImage">
+                      <img src="{{ asset('uploads/students/'.$donation->image) }}"
+                       width="50px" height="50px" alt="donImage">
                     </td>
                     <td>{{ $donation->dtitle }}</td>
                     <td>{{ $donation->dquantity}}</td>
                     <td>{{ $donation->location}}</td>
                     <td>{{ $donation->pnumber }}</td>
                     <td>{{ $donation->date }}</td>
-                    <td>Action</td>
+                    <td>
+                        @if ($donation->isset==0)
+                        <label class="btn btn-sm btn-danger">Inactive</label>
+                        @else
+                        <label class="btn btn-sm btn-success">Active</label>
+                            
+                        @endif
+
+                    </td>
+                    <td>
+                        <a class="btn btn-primary" href="" style="font-size:12px">View</a>
+                        <a class="btn btn-success" href="{{ url('user/approved',$donation->id) }}" style="font-size:12px">
+                            Approve
+                        </a>
+                        
+                    </td>
+                    
+                        
+                    
                 </tr>
             </tbody>
         @endforeach

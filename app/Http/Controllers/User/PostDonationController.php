@@ -33,7 +33,7 @@ class PostDonationController extends Controller
     }
      function approve(){
 
-        $donations = Donation::where('isset', '=', '0')->get();
+        $donations = Donation::where('isset', '=', 0)->get();
 
         return view('user.unverifiedposts',compact('donations'))
                 ->with('i');
@@ -52,16 +52,34 @@ class PostDonationController extends Controller
     }
     //change status
     function changestatus($id){
-       $getStatus = Post::select('isset')->where('id',$id)->first();
+       $getStatus = Donation::select('isset')->where('id',$id)->first();
        if($getStatus->isset==0){
             $status = 1;
 
        }else{
             $status = 0;
        }
-       Post::where('id',$id)->update(['isset'=>$status]);
+       Donation::where('id',$id)->update(['isset'=>$status]);
        return redirect()->back()->with('status changed successfully!');
-
-
     }
+
+    function approveddetails(){
+        $donations = Donation::where('isset', '=', 1)->get();
+
+        return view('user.verifiedpost',compact('donations'))
+                ->with('i');
+    }
+
+    function disapprove($id){
+           $getStatus = Donation::select('isset')->where('id',$id)->first();
+       if($getStatus->isset==1){
+            $status = 0;
+
+       }else{
+            $status = 1;
+       }
+       Donation::where('id',$id)->update(['isset'=>$status]);
+       return redirect()->back()->with('status changed successfully!');
+    }
+    
 }
