@@ -1,6 +1,6 @@
  @if(Auth::user()->role == 'donor')
  @include('sidebar.donor')
- <title>Unverified Users</title>
+ <title> View Donation Posts</title>
 
 
 

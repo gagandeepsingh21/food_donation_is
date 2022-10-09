@@ -42,7 +42,7 @@
 
                     </td>
                     <td>
-                        <a class="btn btn-primary" href="" style="font-size:12px">View</a>
+                        <a class="btn btn-primary" href=" {{ url('user/vunverifiedposts',$donation->id) }}" style="font-size:12px">View</a>
                         <a class="btn btn-success" href="{{ url('user/approved',$donation->id) }}" style="font-size:12px">
                             Approve
                         </a>

@@ -103,4 +103,20 @@ class PostDonationController extends Controller
        return redirect()->back()->with('status changed successfully!');
     }
     
+    //view on a separate page
+    function vverifiedpost($id){
+        $donposts = Donation::find($id);
+        return view('user.vverifiedpost', compact('donposts'));
+    }
+    function vunverifiedpost($id){
+        $donposts = Donation::find($id);
+        return view('user.vunverifiedposts', compact('donposts'));
+    }
+
+    function vapprovedpost($id){
+        $donp = Donation::find($id);
+        return view('user.vapprovedpost', compact('donp'));
+        
+    }
+
 }

@@ -1,6 +1,6 @@
   @if(Auth::user()->role == 'admin')
  @include('sidebar.admin')
- <title>Unverified Users</title>
+ <title>Verified Users</title>
 
 
 
@@ -42,7 +42,7 @@
 
                     </td>
                     <td>
-                      <a class="btn btn-primary" href="" style="font-size:12px">View</a>
+                      <a class="btn btn-primary" href=" {{ url('user/vverifiedpost',$donation->id) }}" style="font-size:12px">View</a>
                         <a class="btn btn-danger" href="{{ url('user/disapprove',$donation->id) }}" style="font-size:12px">
                             Reject
                         </a>

@@ -1,6 +1,6 @@
  @if(Auth::user()->role == 'organization')
  @include('sidebar.organization')
- <title>Unverified Users</title>
+ <title>Approved Users</title>
 
 
 
@@ -41,7 +41,7 @@
 
                     </td>
                     <td>
-                        <button class="btn btn-sm btn-primary">View</button>
+                        <a class="btn btn-primary" href=" {{ url('user/vapprovedpost',$don->id) }}" style="font-size:12px">View</a>
                     </td>
                 </tr>
             </tbody>

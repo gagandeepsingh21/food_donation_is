@@ -39,7 +39,7 @@ class UserController extends Controller
           }
     }
 
-        function check(Request $request){
+    function check(Request $request){
         //Validate inputs
         $request->validate([
               'email'=>'required|email|exists:users,email',
