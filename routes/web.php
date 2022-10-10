@@ -56,7 +56,8 @@ Route::prefix('user')->name('user.')->group(function(){
         Route::get('/vverifiedpost/{id}',[PostDonationController::class, 'vverifiedpost'])->name('vverifiedpost');
         Route::get('/vunverifiedposts/{id}',[PostDonationController::class, 'vunverifiedpost'])->name('vunverifiedpost');
         Route::get('/vapprovedpost/{id}',[PostDonationController::class, 'vapprovedpost'])->name('vapprovedpost');
-
+        Route::get('/vdisapprovedpost/{id}',[PostDonationController::class, 'vdisapprovedpost'])->name('vdisapprovedpost');
+        Route::get('/vapost/{id}',[PostDonationController::class, 'vapost'])->name('vapost');
         Route::get('/verifiedpost',[PostDonationController::class,'approveddetails'])->name('verifiedpost');
         Route::get('/viewcontacts', [ContactController::class, 'showdetails'])->name('viewcontacts');
         

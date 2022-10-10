@@ -23,8 +23,8 @@
                 <label  for="title">Donation Title</label>
                 <input type="text" name="dtitle" class="form-control" placeholder="Donation name" value="{{ $donp->dtitle }}"><br>
 
-                 <label for="Description">Description</label>
-                <textarea name="descrip" rows="4" cols="60" placeholder="{{ $donp->description }}" class="form-control"  ></textarea><br>
+                <label for="Description">Description</label>
+                <textarea name="descrip" rows="4" cols="60" placeholder="{{ $donp->description }}" class="form-control" ></textarea><br>
                 
 
                 <label for="role">Donation Quantity</label>

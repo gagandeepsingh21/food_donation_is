@@ -16,6 +16,7 @@ class Donation extends Model
         'location',
         'isset',
         'date',
+        'description',
         
     ];
 }

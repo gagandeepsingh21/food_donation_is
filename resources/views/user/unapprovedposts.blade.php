@@ -41,7 +41,7 @@
 
                     </td>
                     <td>
-                        <button class="btn btn-sm btn-primary">View</button>
+                        <a class="btn btn-primary" href=" {{ url('user/vdisapprovedpost',$don->id) }}" style="font-size:12px">View</a>
                     </td>
                 </tr>
             </tbody>

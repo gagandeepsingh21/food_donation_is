@@ -35,6 +35,9 @@
                 <input type="text" name="dtitle" class="form-control" placeholder="Donation name" value="{{ old('dtitle') }}">
                 <span class="text-danger">@error('dtitle') {{ $message }} @enderror</span><br>
 
+                <label for="Description">Description</label>
+                <textarea name="description" rows="4" cols="60" placeholder="Please give a brief description about your donation drive...." class="form-control" value="{{ old('description') }}"></textarea><br>
+
                 <label for="role">Donation Quantity</label>
                  <input type="number" name="dquantity" class="form-control" placeholder="Donation Quantity" value="{{ old('dquanity') }}">
                 <span class="text-danger">@error('dquantity') {{ $message }} @enderror</span><br>

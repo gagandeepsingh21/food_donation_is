@@ -14,6 +14,7 @@ class PostDonationController extends Controller
         $donation = new Donation();
         $donation -> dtitle = $request->input('dtitle');
         $donation -> dquantity = $request->input('dquantity');
+        $donation -> description = $request->input('description');
         $donation -> pnumber = $request->input('pnumber');
         $donation -> location = $request->input('address');
         $donation -> date = $request->input('dondate');
@@ -103,7 +104,7 @@ class PostDonationController extends Controller
        return redirect()->back()->with('status changed successfully!');
     }
     
-    //view on a separate page
+    //view on a separate page on admin side
     function vverifiedpost($id){
         $donposts = Donation::find($id);
         return view('user.vverifiedpost', compact('donposts'));
@@ -113,10 +114,22 @@ class PostDonationController extends Controller
         return view('user.vunverifiedposts', compact('donposts'));
     }
 
+    //view on a separate page on organization side
     function vapprovedpost($id){
         $donp = Donation::find($id);
         return view('user.vapprovedpost', compact('donp'));
         
+    }
+    function vdisapprovedpost($id){
+        $donp = Donation::find($id);
+        return view('user.vdisapprovedpost', compact('donp'));
+    }
+
+    //view on a separate for the donor
+
+    function vapost($id){
+         $adons = Donation::find($id);
+        return view('user.vapost', compact('adons'));
     }
 
 }

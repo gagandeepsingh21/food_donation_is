@@ -23,7 +23,9 @@
                 
                 <label  for="title">Donation Title</label>
                 <input type="text" name="dtitle" class="form-control" placeholder="Donation name" value="{{ $donposts->dtitle }}" style="width: 100%;"><br>
-                
+
+                <label for="Description">Description</label>
+                <textarea name="descrip" rows="4" cols="60" placeholder="{{ $donposts->description }}" class="form-control"  ></textarea><br>
 
                 <label for="role">Donation Quantity</label>
                  <input type="number" name="dquantity" class="form-control" placeholder="Donation Quantity" value="{{ $donposts->dquantity}}"><br>
