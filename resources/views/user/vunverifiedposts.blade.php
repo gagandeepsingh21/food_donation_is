@@ -24,8 +24,9 @@
                 <label  for="title">Donation Title</label>
                 <input type="text" name="dtitle" class="form-control" placeholder="Donation name" value="{{ $donposts->dtitle }}" style="width: 100%;"><br>
 
-                <label for="Description">Description</label>
-                <textarea name="descrip" rows="4" cols="60" placeholder="{{ $donposts->description }}" class="form-control"  ></textarea><br>
+                                  <label for="Description">Description</label>
+                <textarea name="descrip" rows="4" cols="60" placeholder="Please write description your donation here...." class="form-control" readonly> {{ $donposts->description }}</textarea><br>
+
 
                 <label for="role">Donation Quantity</label>
                  <input type="number" name="dquantity" class="form-control" placeholder="Donation Quantity" value="{{ $donposts->dquantity}}"><br>
@@ -37,7 +38,8 @@
 
                 <label for="Address">Address details</label>
                 <iframe width="100%" height="250" src="https://maps.google.com/maps?q={{ $donposts->location }}&output=embed"></iframe><br><br>
-                {{-- <input type="text" name="address" class="form-control" placeholder="address" value="{{ $donposts->location }}"> --}}
+                <input type="text" name="address" class="form-control" placeholder="address" value="{{ $donposts->location }}" readonly><br>
+               
                 
 
                  <label for="donDate">Date of Donation</label>

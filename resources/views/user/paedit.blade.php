@@ -24,7 +24,7 @@
                 <input type="text" name="dtitle" class="form-control" placeholder="Donation name" value="{{ $upost->dtitle }}"><br>
 
                  <label for="Description">Description</label>
-                <textarea name="description" rows="4" cols="60" placeholder="" class="form-control" value="{{ $upost->description }}">{{ $upost->description }}</textarea><br>
+                <textarea name="description" rows="4" cols="60" placeholder="" class="form-control" >{{ $upost->description }}</textarea><br>
                 
 
                 <label for="role">Donation Quantity</label>
