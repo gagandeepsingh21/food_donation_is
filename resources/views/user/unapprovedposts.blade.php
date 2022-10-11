@@ -42,7 +42,7 @@
                     </td>
                     <td>
                         <a class="btn btn-primary" href=" {{ url('user/vdisapprovedpost',$don->id) }}" style="font-size:12px">View</a>
-                        <a class="btn btn-success" href="#" style="font-size:12px">Edit</a>
+                        <a class="btn btn-success" href="{{ url('user/paedit',$don->id) }}" style="font-size:12px">Edit</a>
                         <a class="btn btn-danger" href=" {{ url('user/deleteapprpost',$don->id) }}" style="font-size:12px">Delete</a>
                     </td>
                 </tr>

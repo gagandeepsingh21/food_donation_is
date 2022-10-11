@@ -69,6 +69,7 @@ class PostDonationController extends Controller
                 ->with('i');
 
     }
+    
     //view approved posts for admins
      function approveddetails(){
         $donations = Donation::where('isset', '=', 1)->get();
