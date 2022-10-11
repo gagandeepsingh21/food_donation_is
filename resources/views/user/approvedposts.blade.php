@@ -3,8 +3,18 @@
  <title>Approved Users</title>
 
 
-
+      @if (Session::get('success'))
+                <div class="alert alert-success">
+                    {{Session::get('success')}}
+                </div>
+            @endif
+             @if (Session::get('fail'))
+                <div class="alert alert-danger">
+                    {{ Session::get('fail') }}
+                </div>
+            @endif
     <table class="table table-hover">
+
         <thead class="thead-dark">
             <tr>
                 <th scope="col">#</th>
@@ -42,6 +52,8 @@
                     </td>
                     <td>
                         <a class="btn btn-primary" href=" {{ url('user/vapprovedpost',$don->id) }}" style="font-size:12px">View</a>
+                        <a class="btn btn-success" href="{{ url('user/paedit',$don->id) }}" style="font-size:12px">Edit</a>
+                        <a class="btn btn-danger" href=" {{ url('user/deleteapprpost',$don->id) }}" style="font-size:12px">Delete</a>
                     </td>
                 </tr>
             </tbody>

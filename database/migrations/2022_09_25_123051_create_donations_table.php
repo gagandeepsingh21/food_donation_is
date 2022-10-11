@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->string('dtitle');
+            $table->string('description');
             $table->string('image');
             $table->Integer('dquantity');
             $table->string('pnumber');

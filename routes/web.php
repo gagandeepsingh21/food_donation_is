@@ -60,8 +60,9 @@ Route::prefix('user')->name('user.')->group(function(){
         Route::get('/vapost/{id}',[PostDonationController::class, 'vapost'])->name('vapost');
         Route::get('/verifiedpost',[PostDonationController::class,'approveddetails'])->name('verifiedpost');
         Route::get('/viewcontacts', [ContactController::class, 'showdetails'])->name('viewcontacts');
-        
-
+        Route::get('/deleteapprpost/{id}',[PostDonationController::class,'deleteapprpost'])->name('deleteapprpost');
+        Route::get('/paedit/{id}',[PostDonationController::class,'upost'])->name('paedit');
+        Route::put('/update-post/{id}',[PostDonationController::class,'updatepost'])->name('update-post');
     });
 
 });

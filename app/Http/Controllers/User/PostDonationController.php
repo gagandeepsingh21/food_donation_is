@@ -132,4 +132,43 @@ class PostDonationController extends Controller
         return view('user.vapost', compact('adons'));
     }
 
+    //delete a post from the approved and disapproved organization posts
+    function deleteapprpost($id){
+        $post = Donation::find($id);
+        $post->delete();
+       return redirect()->route('user.approvedposts')->with('Post deleted successfully!');
+
+    }
+
+    //updating the post details
+    function upost($id){
+        $upost = Donation::find($id);
+        return view('user.paedit',compact('upost'));
+
+    }
+    
+    function updatepost(Request $request, $id){
+        $donation = new Donation();
+        $donation = Donation::find($id);
+        $donation -> dtitle = $request->input('dtitle');
+        $donation -> dquantity = $request->input('dquantity');
+        $donation -> description = $request->input('description');
+        $donation -> pnumber = $request->input('pnumber');
+        $donation -> location = $request->input('address');
+        $donation -> date = $request->input('dondate');
+        $donation -> user_id = Auth::user()->id;
+        if($request->hasfile('pimage')){
+            $file= $request->file('pimage');
+            $extension =$file->getClientOriginalExtension();
+            $filename = time().'.'.$extension;
+            $file->move('uploads/students/', $filename);
+            $donation->image = $filename;
+
+        }
+        $donation->update();
+        return redirect('user/approvedposts')->with('Donation post updated successfully!');
+
+        
+    }
+    
 }
