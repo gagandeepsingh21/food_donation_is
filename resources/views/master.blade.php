@@ -8,6 +8,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/a5878f8a6c.js" crossorigin="anonymous"></script>
 
         <!-- Styles -->
         <style>

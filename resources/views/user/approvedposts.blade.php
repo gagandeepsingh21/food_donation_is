@@ -1,5 +1,6 @@
  @if(Auth::user()->role == 'organization')
  @include('sidebar.organization')
+<script src="https://kit.fontawesome.com/a5878f8a6c.js" crossorigin="anonymous"></script>
  <title>Approved Users</title>
 
 
@@ -51,9 +52,9 @@
 
                     </td>
                     <td>
-                        <a class="btn btn-primary" href=" {{ url('user/vapprovedpost',$don->id) }}" style="font-size:12px">View</a>
-                        <a class="btn btn-success" href="{{ url('user/paedit',$don->id) }}" style="font-size:12px">Edit</a>
-                        <a class="btn btn-danger" href=" {{ url('user/deleteapprpost',$don->id) }}" style="font-size:12px">Delete</a>
+                        <a  href=" {{ url('user/vapprovedpost',$don->id) }}" style="font-size:12px"><i class="fa-solid fa-eye" style="color: black; font-size:14px;"></i></a>
+                        <a class="btn btn-success" href="{{ url('user/paedit',$don->id) }}" style="font-size:12px"><i class="fa-solid fa-pen" style="color: black; font-size:10px;"></i></a>
+                        <a class="btn btn-danger" href=" {{ url('user/deleteapprpost',$don->id) }}" style="font-size:12px"><i class="fa-solid fa-trash-can" style="color: black; font-size:14px;"></i></a>
                     </td>
                 </tr>
             </tbody>

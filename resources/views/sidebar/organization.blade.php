@@ -4,6 +4,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://kit.fontawesome.com/a5878f8a6c.js" crossorigin="anonymous"></script>
         <script>
         jQuery(document).ready(function($){
             $("#menu-toggle").click(function(e) {
@@ -64,7 +65,7 @@
 
         
         <div class="list-group list-group-flush">
-            <a href="{{ route('user.dashboard') }}" class="list-group-item list-group-item-action bg-light">Dashboard</a>
+            <a href="{{ route('user.dashboard') }}" class="list-group-item list-group-item-action bg-light"><i class="fa-solid fa-gauge-max"></i><i class="fa-solid fa-house"></i> Dashboard</a>
             <a href="{{ route('user.postdonation') }}" class="list-group-item list-group-item-action bg-light">Post dontation info</a>
             <a href="{{ route('user.approvedposts') }}" class="list-group-item list-group-item-action bg-light">View Approved posts</a>
             <a href="{{ route('user.unapprovedposts') }}" class="list-group-item list-group-item-action bg-light">Posts pending approval</a>

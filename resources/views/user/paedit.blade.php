@@ -1,7 +1,7 @@
  @if(Auth::user()->role == 'organization')
  @include('sidebar.organization')
+ <script src="https://kit.fontawesome.com/a5878f8a6c.js" crossorigin="anonymous"></script>
  <title>Edit Details</title>
-
 
 
      <form action="{{ url('user/update-post',$upost->id) }}" method="post" enctype="multipart/form-data">

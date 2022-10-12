@@ -1,12 +1,13 @@
 @extends('master')
 
 @section('content')
+
     {{-- admin's view --}}
     @if (Auth::user()->role == 'admin')
 
        
         @include('sidebar.admin')
-
+        <script src="https://kit.fontawesome.com/a5878f8a6c.js" crossorigin="anonymous"></script>
         
 
 
@@ -60,6 +61,7 @@
     {{-- Organization's view  --}}
      @if (Auth::user()->role == 'organization')
      @include('sidebar.organization')
+     <script src="https://kit.fontawesome.com/a5878f8a6c.js" crossorigin="anonymous"></script>
         
         @if( auth()->check() )
                     {{-- <h3><p>Organization Dashboard</h3> --}}
@@ -110,6 +112,7 @@
     @if (Auth::user()->role == 'donor')
     
         @include('sidebar.donor')
+        <script src="https://kit.fontawesome.com/a5878f8a6c.js" crossorigin="anonymous"></script>
 
     
         

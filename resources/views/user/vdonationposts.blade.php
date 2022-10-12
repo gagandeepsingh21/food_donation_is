@@ -1,5 +1,6 @@
  @if(Auth::user()->role == 'donor')
  @include('sidebar.donor')
+ <script src="https://kit.fontawesome.com/a5878f8a6c.js" crossorigin="anonymous"></script>
  <title> View Donation Posts</title>
 
 
@@ -41,7 +42,7 @@
 
                     </td>
                     <td>
-                        <a class="btn btn-primary" href=" {{ url('user/vapost',$don->id) }}" style="font-size:12px">View</a>
+                        <a  href=" {{ url('user/vapost',$don->id) }}" style="font-size:12px"><i class="fa-solid fa-eye"></i></a>
                     </td>
                 </tr>
             </tbody>

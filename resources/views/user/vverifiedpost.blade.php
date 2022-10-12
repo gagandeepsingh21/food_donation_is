@@ -1,5 +1,6 @@
   @if(Auth::user()->role == 'admin')
  @include('sidebar.admin')
+ <script src="https://kit.fontawesome.com/a5878f8a6c.js" crossorigin="anonymous"></script>
  <title>Verified Users</title>
 
 

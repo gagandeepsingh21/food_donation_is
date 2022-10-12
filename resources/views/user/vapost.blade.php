@@ -1,5 +1,7 @@
  @if(Auth::user()->role == 'donor')
  @include('sidebar.donor')
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+ <script src="https://kit.fontawesome.com/a5878f8a6c.js" crossorigin="anonymous"></script>
  <title>Approved Donation Details</title>
 
 
@@ -44,7 +46,7 @@
                  <label for="donDate">Date of Donation</label>
                 <input type="date" name="dondate" class="form-control"  value="{{ $adons->date}}"><br><br>
 
-                <button class="btn btn-success" style="width: 100%;"> Make Donation</button>
+                <button class="btn btn-success" style="width: 100%;"><a href="{{ route('user.makedonation') }}" style="text-decoration: none; color:white;"> Make Donation</a></button>
              
                  
                  

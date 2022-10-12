@@ -3,6 +3,7 @@
 <title>Add User</title>
 
 @include('sidebar.admin')
+<script src="https://kit.fontawesome.com/a5878f8a6c.js" crossorigin="anonymous"></script>
 
      <h3>Feedback from users</h3>
 

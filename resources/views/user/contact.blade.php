@@ -13,6 +13,7 @@
          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" ></script>
             <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" ></script>
+            <script src="https://kit.fontawesome.com/a5878f8a6c.js" crossorigin="anonymous"></script>
             <link rel="stylesheet" href="{{ asset('bootstrap.min.css') }}">
 
         <!-- Styles -->
