@@ -65,7 +65,8 @@
         <div class="list-group list-group-flush">
              <a href="{{ route('user.dashboard') }}" class="list-group-item list-group-item-action bg-light">Dashboard</a>
              <a href="{{ route('user.vdonationposts') }}" class="list-group-item list-group-item-action bg-light">View Donation Posts</a>
-            <a href="#" class="list-group-item list-group-item-action bg-light">Reports</a>
+             <a href="{{ route('user.vdonationmade') }}" class="list-group-item list-group-item-action bg-light">View Donation Made</a>
+             <a href="#" class="list-group-item list-group-item-action bg-light">Reports</a>
             <a href="{{ route('user.logout') }}" class="list-group-item list-group-item-action bg-light" 
             onclick="event.preventDefault();document.getElementById('logout-form').submit();" >Logout</a>
                                      <form action="{{ route('user.logout') }}" method="post" class="d-none" id="logout-form">@csrf</form>

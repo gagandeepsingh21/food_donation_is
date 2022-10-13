@@ -75,7 +75,7 @@ class UserController extends Controller
     }
 
    function showdetails(){
-        $users = User::where('role', '!=', 'admin')->get();
+        $users = User::where('role', '=', 'organization')->get();
 
         return view('user.userdetails',compact('users'))
                 ->with('i');

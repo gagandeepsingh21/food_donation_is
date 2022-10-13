@@ -64,6 +64,7 @@ Route::prefix('user')->name('user.')->group(function(){
         Route::get('/paedit/{id}',[PostDonationController::class,'upost'])->name('paedit');
         Route::put('/update-post/{id}',[PostDonationController::class,'updatepost'])->name('update-post');
         Route::view('/makedonation','user.makedonation')->name('makedonation');
+        Route::view('/vdonationmade','user.vdonationmade')->name('vdonationmade');
     });
 
 });

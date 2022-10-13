@@ -61,6 +61,7 @@ class PostDonationController extends Controller
          return view('user.approvedposts',compact('user','dons'))
                 ->with('i');
     }
+    
     //view approved posts for donors
     function vposts(){
         $dons = Donation::where('isset', '=', 1)->get();
