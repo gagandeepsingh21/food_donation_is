@@ -82,6 +82,19 @@ class UserController extends Controller
                 
     }
 
+     function updatedetails(Request $request){
+          $user = new User();
+          $user = User::find($request->id);
+          $user->name = $request->name;
+          $user->email = $request->email;
+          $user->pnumber = $request->pnumber;
+          $user->address = $request->address;
+          $user->password = $request->password;
+          $user->role = $request->role;
+          $save = $user->update();   
+          return redirect()->back()->with('Details updated successfully!'); 
+    }
+
     
     function logout(){
         Auth::guard('web')->logout();

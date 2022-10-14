@@ -19,6 +19,9 @@
             <h2 class="col-md-6 offset-md-5" style="margin-top:10px;">My Details</h2>
             <div class="col-md-6 offset-md-3" style="margin-top: 10px">
                  {{-- <h4>Organization Dashboard</h4><hr> --}}
+               <form action="{{ url('user/updatedetails',auth()->user()->id) }}" method="post"> 
+                    @csrf
+                    @method('PUT')
                   <label for="name" style="color:#130200;">Fullname</label>
                 <input type="text" class="form-control" name="name" placeholder="Fullname" value="{{ auth()->user()->name }}" >
                
@@ -49,6 +52,7 @@
                 
                  
                 <button type="submit" class="btn btn-primary">Update</button><br><br>
+                <form>
             </div>
         </div>
     </div>
@@ -71,6 +75,10 @@
         <div class="row">
             <div class="col-md-6 offset-md-3" style="margin-top: 10px">
                  {{-- <h4>Organization Dashboard</h4><hr> --}}
+
+               <form action="{{ url('user/updatedetails',auth()->user()->id) }}" method="post"> 
+                    @csrf
+                    @method('PUT')
                   <label for="name" style="color:#130200;">Fullname</label>
                 <input type="text" class="form-control" name="name" placeholder="Fullname" value="{{ auth()->user()->name }}" >
                
@@ -101,6 +109,7 @@
                 
                  
                 <button type="submit" class="btn btn-primary">Update</button><br><br>
+                 </form>
             </div>
         </div>
     </div>
@@ -125,7 +134,11 @@
         <div class="row">
             <div class="col-md-6 offset-md-3" style="margin-top: 10px">
                  {{-- <h4>Organization Dashboard</h4><hr> --}}
+                 <form action="{{ url('user/updatedetails',auth()->user()->id) }}" method="post"> 
+                    @csrf
+                    @method('PUT')
                   <label for="name" style="color:#130200;">Fullname</label>
+                 
                 <input type="text" class="form-control" name="name" placeholder="Fullname" value="{{ auth()->user()->name }}" >
                
                 
@@ -158,6 +171,8 @@
                 
                  
                 <button type="submit" class="btn btn-primary">Update</button><br><br>
+
+                 </form>
             </div>
         </div>
     </div>

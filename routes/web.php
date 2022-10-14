@@ -65,6 +65,7 @@ Route::prefix('user')->name('user.')->group(function(){
         Route::put('/update-post/{id}',[PostDonationController::class,'updatepost'])->name('update-post');
         Route::view('/makedonation','user.makedonation')->name('makedonation');
         Route::view('/vdonationmade','user.vdonationmade')->name('vdonationmade');
+        Route::put('/updatedetails/{id}',[UserController::class,'updatedetails'])->name('updatedetails');
     });
 
 });
