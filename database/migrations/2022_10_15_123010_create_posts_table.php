@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('donationsmade', function (Blueprint $table) {
-            $table->id();
+        Schema::create('posts', function (Blueprint $table) {
+              $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('donations_id');
             $table->string('foodtype');
@@ -23,11 +23,10 @@ return new class extends Migration
             $table->integer('pnum');
             $table->string('address');
             $table->date('date');
+            $table->boolean('dstatus')->default(0);
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('donations_id')->references('id')->on('donations')->onDelete('cascade')->onUpdate('cascade');
-
-
         });
     }
 
@@ -38,6 +37,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('donationsmade');
+        Schema::dropIfExists('posts');
     }
 };

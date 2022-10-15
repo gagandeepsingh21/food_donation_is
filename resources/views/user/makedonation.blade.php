@@ -3,7 +3,7 @@
  <title>Make Donation</title>
  <script src="https://kit.fontawesome.com/a5878f8a6c.js" crossorigin="anonymous"></script>
 
-      <form>
+      <form action="mdonation" method="post" enctype="multipart/form-data">
 
             @csrf
 
@@ -56,8 +56,7 @@
                  <span class="text-danger">@error('date') {{ $message }} @enderror</span>
                  
                 <button type="submit" class="btn btn-primary" style="left:32%; width:100%;">Donate</button><br><br>
-                <center>-----------------------------------or-----------------------------------</center><br>
-                <button type="submit" class="btn btn-primary" style="left:32%; width:100%;">Make money donation instead</button><br>
+               
                 
 
             </div> 

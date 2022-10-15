@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\User\ContactController;
 use App\Http\Controllers\User\PostDonationController;
+use App\Http\Controllers\User\DonationsMadeController;
 use App\Http\Controllers\User\Controller;
 use Illuminate\Support\Facades\Auth;
 
@@ -65,7 +66,9 @@ Route::prefix('user')->name('user.')->group(function(){
         Route::put('/update-post/{id}',[PostDonationController::class,'updatepost'])->name('update-post');
         Route::view('/makedonation','user.makedonation')->name('makedonation');
         Route::view('/vdonationmade','user.vdonationmade')->name('vdonationmade');
+        Route::post('/mdonation', [DonationsMadeController::class,'mdonation'])->name('mdonation');
         Route::put('/updatedetails/{id}',[UserController::class,'updatedetails'])->name('updatedetails');
+        
     });
 
 });
