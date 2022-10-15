@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Donated extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        
+        
+    ];
 }
