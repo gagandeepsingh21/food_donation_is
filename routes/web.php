@@ -26,6 +26,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
 Route::prefix('user')->name('user.')->group(function(){
 
     Route::middleware(['guest:web','PreventBackHistory'])->group(function(){
@@ -65,8 +66,9 @@ Route::prefix('user')->name('user.')->group(function(){
         Route::get('/paedit/{id}',[PostDonationController::class,'upost'])->name('paedit');
         Route::put('/update-post/{id}',[PostDonationController::class,'updatepost'])->name('update-post');
         Route::view('/makedonation','user.makedonation')->name('makedonation');
+        Route::post('/postdonation',[DonationsMadeController::class,'mdonation'])->name('postdonation');
         Route::view('/vdonationmade','user.vdonationmade')->name('vdonationmade');
-        Route::post('/mdonation', [DonationsMadeController::class,'mdonation'])->name('mdonation');
+        Route::get('/mdonation/{id}', [DonationsMadeController::class,'getdetails'])->name('mdonation');
         Route::put('/updatedetails/{id}',[UserController::class,'updatedetails'])->name('updatedetails');
         
     });

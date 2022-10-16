@@ -25,9 +25,15 @@ class DonationsMadeController extends Controller
           $dmade->address = $request->input('address');
           $dmade->date = $request->input('date');
           $dmade -> user_id = Auth::user()->id;
-          $dmade -> donations_id = Donation::find(id);
+          
+          $dmade -> donations_id =$request->input('id');
 
           $dmade->save();
         return redirect()->back()->with('Donated successfully!');
+    }
+
+    function getdetails($id){
+        $donate = Donation::find($id);
+        return view('user/makedonation',compact('donate'));
     }
 }

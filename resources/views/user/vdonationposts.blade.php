@@ -43,6 +43,7 @@
                     </td>
                     <td>
                         <a  href=" {{ url('user/vapost',$don->id) }}" style="font-size:12px"><i class="fa-solid fa-eye"></i></a>
+                        <a  href=" {{ url('user/mdonation',$don->id) }}" style="font-size:12px">Donate</a>
                     </td>
                 </tr>
             </tbody>

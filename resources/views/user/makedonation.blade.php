@@ -3,7 +3,7 @@
  <title>Make Donation</title>
  <script src="https://kit.fontawesome.com/a5878f8a6c.js" crossorigin="anonymous"></script>
 
-      <form action="mdonation" method="post" enctype="multipart/form-data">
+      <form action="{{ url('user/postdonation')}}" method="post" enctype="multipart/form-data">
 
             @csrf
 
@@ -27,7 +27,7 @@
                
             <div class="col-md-6 offset-md-3" style="margin-top: 10px">
                 
-                
+                <input type="hidden" name="id" value="{{ $donate['id']}}">
                 <label  for="title">Please indicate the type of food item you will be donating:</label><br>
                 <select name="foodtype" id="foodtype" class="form-control">
                     <option value="Cooked food">Cooked food</option>

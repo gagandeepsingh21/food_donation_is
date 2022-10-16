@@ -45,6 +45,15 @@ class UserController extends Controller
               'email'=>'required|email|exists:users,email',
               'password'=>'required|min:4|max:30'
         ]);
+        $email= $request->email;
+        $password = $request->password;
+        if(Auth::attempt(['email' => $email, 'password' => $password,'status'=> 1])){
+            return redirect()->route('user.dashboard');
+        }elseif(Auth::attempt(['email' => $email, 'password' => $password,'status'=> 0])){
+            return redirect()->route('user.userLogin')->with('Your account has been temporarily banned!');
+        }else{
+            return redirect()->route('user.userLogin')->with('fail','Incorrect credentials');
+        }
 
         $creds = $request->only('email','password');
         
