@@ -67,10 +67,12 @@ Route::prefix('user')->name('user.')->group(function(){
         Route::put('/update-post/{id}',[PostDonationController::class,'updatepost'])->name('update-post');
         Route::view('/makedonation','user.makedonation')->name('makedonation');
         Route::post('/postdonation',[DonationsMadeController::class,'mdonation'])->name('postdonation');
-        Route::view('/vdonationmade','user.vdonationmade')->name('vdonationmade');
+        Route::get('/vdonationmade',[DonationsMadeController::class,'index'])->name('vdonationmade');
         Route::get('/mdonation/{id}', [DonationsMadeController::class,'getdetails'])->name('mdonation');
         Route::put('/updatedetails/{id}',[UserController::class,'updatedetails'])->name('updatedetails');
-        
+        Route::get('/vdmade',[DonationsMadeController::class,'vdmade'])->name('vdmade');
+        Route::get('/received/{id}',[DonationsMadeController::class,'received']);
+
     });
 
 });
