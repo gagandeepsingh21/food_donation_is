@@ -49,10 +49,8 @@ class UserController extends Controller
         $password = $request->password;
         if(Auth::attempt(['email' => $email, 'password' => $password,'status'=> 1])){
             return redirect()->route('user.dashboard');
-        }elseif(Auth::attempt(['email' => $email, 'password' => $password,'status'=> 0])){
-            return redirect()->route('user.userLogin')->with('Your account has been temporarily banned!');
         }else{
-            return redirect()->route('user.userLogin')->with('fail','Incorrect credentials');
+            return redirect()->route('user.userLogin')->with('your account has been blocked!');
         }
 
         $creds = $request->only('email','password');
@@ -62,6 +60,19 @@ class UserController extends Controller
         }else{
             return redirect()->route('user.userLogin')->with('fail','Incorrect credentials');
         }
+
+    }
+    
+    function blocked($id){
+         $getStatus = User::select('status')->where('id',$id)->first();
+       if($getStatus->status==1){
+            $status = 0;
+
+       }else{
+            $status = 1;
+       }
+       User::where('id',$id)->update(['status'=>$status]);
+       return redirect()->back()->with('status changed successfully!');
     }
 
     function addadmin(Request $request){
@@ -91,6 +102,7 @@ class UserController extends Controller
                 
     }
 
+
      function updatedetails(Request $request){
           $user = new User();
           $user = User::find($request->id);
@@ -101,6 +113,7 @@ class UserController extends Controller
           $save = $user->update();   
           return redirect()->back()->with('Details updated successfully!'); 
     }
+
 
     
     function logout(){

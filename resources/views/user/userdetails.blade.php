@@ -37,7 +37,11 @@
                         @endif
 
                     </td>
-                    <td></td>
+                    <td>
+                        <a class="btn btn-danger" href="{{ url('user/blocked',$user->id) }}" style="font-size:12px">
+                            Block
+                        </a>
+                    </td>
                 </tr>
             </tbody>
         @endforeach
