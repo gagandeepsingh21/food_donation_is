@@ -28,7 +28,7 @@ class PostDonationController extends Controller
 
         }
         $donation->save();
-        return redirect()->back()->with('Donation post cretead successfully!');
+        return redirect()->back()->with('success','Donation post cretead successfully!');
 
         
     }
@@ -90,7 +90,7 @@ class PostDonationController extends Controller
             $status = 0;
        }
        Donation::where('id',$id)->update(['isset'=>$status]);
-       return redirect()->back()->with('status changed successfully!');
+       return redirect()->back()->with('Status changed successfully!');
     }
 
 
@@ -103,7 +103,7 @@ class PostDonationController extends Controller
             $status = 1;
        }
        Donation::where('id',$id)->update(['isset'=>$status]);
-       return redirect()->back()->with('status changed successfully!');
+       return redirect()->back()->with('success','Status changed successfully!');
     }
     
     //view on a separate page on admin side
@@ -138,7 +138,7 @@ class PostDonationController extends Controller
     function deleteapprpost($id){
         $post = Donation::find($id);
         $post->delete();
-       return redirect()->route('user.approvedposts')->with('Post deleted successfully!');
+       return redirect()->route('user.approvedposts')->with('success','Post deleted successfully!');
 
     }
 
@@ -168,7 +168,7 @@ class PostDonationController extends Controller
 
         }
         $donation->update();
-        return redirect('user/approvedposts')->with('Donation post updated successfully!');
+        return redirect('user/approvedposts')->with('success','Donation post updated successfully!');
 
         
     }

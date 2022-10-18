@@ -3,7 +3,16 @@
 @include('sidebar.admin')
 <script src="https://kit.fontawesome.com/a5878f8a6c.js" crossorigin="anonymous"></script>
 
-
+                     @if (Session::get('success'))
+                         <div class="alert alert-success">
+                             {{Session::get('success')}}
+                         </div>
+                    @endif
+                    @if (Session::get('fail'))
+                        <div class="alert alert-danger">
+                             {{ Session::get('fail') }}
+                        </div>
+                     @endif
     <table class="table table-hover">
         <thead class="thead-dark">
             <tr>
@@ -30,7 +39,7 @@
                     <td>{{ $user->role }}</td>
                     <td>
                         @if ($user->status==0)
-                        <label class="btn btn-sm btn-danger">Inactive</label>
+                        <label class="btn btn-sm btn-danger">Blocked</label>
                         @else
                         <label class="btn btn-sm btn-success">Active</label>
                             
@@ -38,9 +47,17 @@
 
                     </td>
                     <td>
+                    @if ($user->status==0)
+                        <a class="btn btn-success" href="{{ url('user/blocked',$user->id) }}" style="font-size:12px">
+                            Activate
+                        </a>
+                        @else
                         <a class="btn btn-danger" href="{{ url('user/blocked',$user->id) }}" style="font-size:12px">
                             Block
                         </a>
+                            
+                        @endif
+                        
                     </td>
                 </tr>
             </tbody>

@@ -49,17 +49,20 @@ class UserController extends Controller
         $password = $request->password;
         if(Auth::attempt(['email' => $email, 'password' => $password,'status'=> 1])){
             return redirect()->route('user.dashboard');
+        }elseif(Auth::attempt(['email' => $email, 'password' => $password,'status'=> 0])){
+            return redirect()->route('user.userLogin')->with('fail','Your account has been blocked. Please contact administrator!');
         }else{
-            return redirect()->route('user.userLogin')->with('your account has been blocked!');
+             return redirect()->route('user.userLogin')->with('fail','Your email or Password is incrorrect! Please check again');
+
         }
 
-        $creds = $request->only('email','password');
+        // $creds = $request->only('email','password');
         
-        if( Auth::guard('web')->attempt($creds)){
-            return redirect()->route('user.dashboard');
-        }else{
-            return redirect()->route('user.userLogin')->with('fail','Incorrect credentials');
-        }
+        // if( Auth::guard('web')->attempt($creds)){
+        //     return redirect()->route('user.dashboard');
+        // }else{
+        //     return redirect()->route('user.userLogin')->with('fail','Incorrect credentials');
+        // }
 
     }
     
@@ -72,7 +75,7 @@ class UserController extends Controller
             $status = 1;
        }
        User::where('id',$id)->update(['status'=>$status]);
-       return redirect()->back()->with('status changed successfully!');
+       return redirect()->back()->with('success','Status changed successfully!');
     }
 
     function addadmin(Request $request){
@@ -89,7 +92,7 @@ class UserController extends Controller
 
         User::create($request->all());
 
-        return redirect()->route('user.dashboard');
+        return redirect()->back()->with('success','Admin created successfully!');
 
        
     }
@@ -111,7 +114,7 @@ class UserController extends Controller
           $user->address = $request->address;
           $user->role = $request->role;
           $save = $user->update();   
-          return redirect()->back()->with('Details updated successfully!'); 
+          return redirect()->back()->with('success','Details updated successfully!'); 
     }
 
 

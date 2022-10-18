@@ -31,7 +31,7 @@ class DonationsMadeController extends Controller
           $dmade -> donations_id =$request->input('id');
 
           $dmade->save();
-          return redirect()->back()->with('Donated successfully!');
+          return redirect()->back()->with('success','You have donated successfully!');
     }
 
     function getdetails($id){
@@ -65,7 +65,7 @@ class DonationsMadeController extends Controller
             $status = 0;
        }
        Post::where('id',$id)->update(['dstatus'=>$status]);
-       return redirect()->back()->with('status changed successfully!');
+       return redirect()->back()->with('success','Status changed successfully!');
    }
 
 

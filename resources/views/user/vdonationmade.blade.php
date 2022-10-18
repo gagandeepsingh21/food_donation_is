@@ -3,7 +3,16 @@
  <title>View Donations Made</title>
  <script src="https://kit.fontawesome.com/a5878f8a6c.js" crossorigin="anonymous"></script>
 
-
+                 @if (Session::get('success'))
+                         <div class="alert alert-success">
+                             {{Session::get('success')}}
+                         </div>
+                    @endif
+                    @if (Session::get('fail'))
+                        <div class="alert alert-danger">
+                             {{ Session::get('fail') }}
+                        </div>
+                     @endif
     <table class="table table-hover">
         <thead class="thead-dark">
             <tr>

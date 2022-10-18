@@ -10,10 +10,7 @@
             @csrf
 
             <div class="signupbox">
-
-                <h3 class="col-md-6 offset-md-3">Add User</h3>
-                
-             @if (Session::get('success'))
+                @if (Session::get('success'))
                 <div class="alert alert-success">
                     {{Session::get('success')}}
                 </div>
@@ -23,7 +20,9 @@
                     {{ Session::get('fail') }}
                 </div>
             @endif
-               
+
+                <h3 class="col-md-6 offset-md-3">Add User</h3>
+                           
             <div class="col-md-6 offset-md-3" style="margin-top: 10px">
                 <label for="name" style="color:#130200;">Fullname</label>
                 <input type="text" name="name" class="form-control" placeholder="Fullname" value="{{ old('name') }}" >

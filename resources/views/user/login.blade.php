@@ -103,32 +103,36 @@
                         <a href="{{ route('user.userRegister') }}" class="text-sm text-gray-700 dark:text-gray-500" id="navSignup">Register</a>
                          <a href="{{ route('user.userContact') }}" class="text-sm text-gray-700 dark:text-gray-500 " id="navfeedback">Feedback</a>
 
-                        {{-- @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif --}}
+                        
                     @endauth
                 </div>
             @endif
              
 
         <form action="{{ route('user.check') }}" method="post">
-            @if (Session::get('fail'))
-                        <div class="alert alert-danger">
-                            {{ Session::get('fail') }}
-                        </div>
-                    @endif
+          
             @csrf
             <div class="loginbox">
                 <h1>Log in</h1>
+                @if (Session::get('success'))
+                <div class="alert alert-success">
+                    {{Session::get('success')}}
+                </div>
+            @endif
+             @if (Session::get('fail'))
+                <div class="alert alert-danger">
+                    {{ Session::get('fail') }}
+                </div>
+            @endif
                
 
                 <label for="email">Email</label>
                 <input type="text" name="email" placeholder="Email" value="{{ old('email') }}"><br>
-                 <span class="text-danger" style="color:red;">@error('email') {{ $message }} @enderror</span><br>
-
+                 <span class="text-danger">@error('email') {{ $message }} @enderror</span><br>
+                
                 <label for="Password">Password</label>
                 <input type="password" name="password" placeholder="Password" value="{{ old('password') }}"><br>
-                 <span class="text-danger" style="color:red;">@error('password') {{ $message }} @enderror</span><br>
+                <span class="text-danger">@error('password') {{ $message }} @enderror</span><br>
 
                 <button type="submit" name="login_user" class="btn">Log in</button><br><br><br><br>
 

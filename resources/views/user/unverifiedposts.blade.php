@@ -4,8 +4,18 @@
  <title>Unverified Users</title>
 
 
-
+                     @if (Session::get('success'))
+                         <div class="alert alert-success">
+                             {{Session::get('success')}}
+                         </div>
+                    @endif
+                    @if (Session::get('fail'))
+                        <div class="alert alert-danger">
+                             {{ Session::get('fail') }}
+                        </div>
+                     @endif
     <table class="table table-hover">
+        
         <thead class="thead-dark">
             <tr>
                 <th scope="col">#</th>

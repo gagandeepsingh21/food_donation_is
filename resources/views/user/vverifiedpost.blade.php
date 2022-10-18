@@ -8,6 +8,16 @@
      <form>
 
             @csrf
+                      @if (Session::get('success'))
+                         <div class="alert alert-success">
+                             {{Session::get('success')}}
+                         </div>
+                    @endif
+                    @if (Session::get('fail'))
+                        <div class="alert alert-danger">
+                             {{ Session::get('fail') }}
+                        </div>
+                     @endif
 
 
             <h3 class="col-md-6 offset-md-3">View Donation details</h3>

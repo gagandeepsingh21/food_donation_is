@@ -22,6 +22,16 @@
                  <form action="{{ url('user/updatedetails',auth()->user()->id) }}" method="post"> 
                     @csrf
                     @method('PUT')
+                        @if (Session::get('success'))
+                <div class="alert alert-success">
+                    {{Session::get('success')}}
+                </div>
+            @endif
+             @if (Session::get('fail'))
+                <div class="alert alert-danger">
+                    {{ Session::get('fail') }}
+                </div>
+            @endif
                   <label for="name" style="color:#130200;">Fullname</label>
                  
                 <input type="text" class="form-control" name="name" placeholder="Fullname" value="{{ auth()->user()->name }}" >
@@ -84,6 +94,16 @@
                  <form action="{{ url('user/updatedetails',auth()->user()->id) }}" method="post"> 
                     @csrf
                     @method('PUT')
+                     @if (Session::get('success'))
+                         <div class="alert alert-success">
+                             {{Session::get('success')}}
+                         </div>
+                    @endif
+                    @if (Session::get('fail'))
+                        <div class="alert alert-danger">
+                             {{ Session::get('fail') }}
+                        </div>
+                     @endif
                   <label for="name" style="color:#130200;">Fullname</label>
                  
                 <input type="text" class="form-control" name="name" placeholder="Fullname" value="{{ auth()->user()->name }}" >
@@ -147,6 +167,17 @@
                  <form action="{{ url('user/updatedetails',auth()->user()->id) }}" method="post"> 
                     @csrf
                     @method('PUT')
+                     @if (Session::get('success'))
+                         <div class="alert alert-success">
+                             {{Session::get('success')}}
+                         </div>
+                    @endif
+                    @if (Session::get('fail'))
+                        <div class="alert alert-danger">
+                             {{ Session::get('fail') }}
+                        </div>
+                     @endif
+                     
                   <label for="name" style="color:#130200;">Fullname</label>
                  
                 <input type="text" class="form-control" name="name" placeholder="Fullname" value="{{ auth()->user()->name }}" >
