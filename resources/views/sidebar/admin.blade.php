@@ -51,12 +51,13 @@
             margin-left: -15rem;
         }
         }
+        
         </style>    
     </head>
     <body>
         <div class="d-flex" id="wrapper">
         <!-- Sidebar -->
-        <div class="bg-light border-right" id="sidebar-wrapper">
+        <div class="bg-light border-right" id="sidebar-wrapper" >
         <div class="sidebar-heading">
             @if( auth()->check() )
                     
@@ -83,7 +84,7 @@
         
          <div id="page-content-wrapper">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-            <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
+            <button class="btn btn-primary" id="menu-toggle" style="background: none; color:black;"><i class="fa-solid fa-bars" style="font-size:20px;"></i></button>
             {{-- <h3 style="margin: 10px">Welcome, {{ auth()->user()->name }}</h3> --}}
             {{-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

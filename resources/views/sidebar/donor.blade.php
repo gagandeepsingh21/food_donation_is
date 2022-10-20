@@ -19,7 +19,7 @@
         }
         #sidebar-wrapper {
         min-height: 100vh;
-        margin-left: -15rem;
+        margin-left: -21rem;
         -webkit-transition: margin .25s ease-out;
         -moz-transition: margin .25s ease-out;
         -o-transition: margin .25s ease-out;
@@ -30,7 +30,7 @@
         font-size: 1.2rem;
         }
         #sidebar-wrapper .list-group {
-        width: 15rem;
+        width: 17rem;
         }
         #page-content-wrapper {
         min-width: 100vw;
@@ -47,8 +47,11 @@
             width: 100%;
         }
         #wrapper.toggled #sidebar-wrapper {
-            margin-left: -15rem;
+            margin-left: -21rem;
         }
+        }
+        .h3, h3 {
+                font-size: 1.6rem;
         }
         </style>    
     </head>
@@ -74,7 +77,7 @@
         </div>
             <div id="page-content-wrapper">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-            <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
+            <button class="btn btn-primary" id="menu-toggle" style="background: none; color:black;"><i class="fa-solid fa-bars" style="font-size:20px;"></i></button>
             {{-- <h3 style="margin: 10px">Welcome, {{ auth()->user()->name }}</h3> --}}
             {{-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
