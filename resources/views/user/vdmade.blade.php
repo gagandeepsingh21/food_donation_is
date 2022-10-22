@@ -58,9 +58,17 @@
 
                     </td>
                     <td>
+                         @if ($store->dstatus==0)
                         <a class="btn btn-success" href="{{ url('user/received',$store->id) }}" style="font-size:12px">
                             Received
                         </a>
+                        @else
+                        <a class="btn btn-danger" href="{{ url('user/received',$store->id) }}" style="font-size:12px">
+                           Reject
+                        </a>
+                            
+                        @endif
+                        
                     </td>
                     
                 </tr>
