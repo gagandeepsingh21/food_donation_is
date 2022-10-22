@@ -56,6 +56,15 @@ class DonationsMadeController extends Controller
     return view('user.vdmade',compact('stores'));
 
    }
+   function report1(){
+        $reports = DB::table('posts')
+                ->select('posts.*','donations.dtitle as Dtitle','users.name as Name','users.role as Role')
+                ->leftJoin('donations','donations.id','posts.donations_id')
+                ->leftJoin('users','users.id','posts.user_id')      
+                ->get();
+    return view('user.reports',compact('reports'));
+   }
+
    function received($id){
        $getStatus = Post::select('dstatus')->where('id',$id)->first();
        if($getStatus->dstatus==0){

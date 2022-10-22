@@ -43,7 +43,7 @@ Route::prefix('user')->name('user.')->group(function(){
     Route::middleware(['auth:web','PreventBackHistory'])->group(function(){
         Route::view('/dashboard','user.dashboard')->name('dashboard');
         Route::post('/logout', [UserController::class, 'logout'])->name('logout');
-        Route::view('/reports', 'user.reports')->name('reports');
+        Route::get('/reports', [DonationsMadeController::class,'report1'])->name('reports');
         Route::view('/adduser','user.adduser')->name('adduser');
         Route::post('/addadmin',[UserController::class,'addadmin'])->name('addadmin');
         Route::get('/blocked/{id}',[UserController::class,'blocked']);

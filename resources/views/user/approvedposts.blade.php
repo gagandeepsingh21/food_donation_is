@@ -1,3 +1,6 @@
+@extends('master')
+
+@section('content')
  @if(Auth::user()->role == 'organization')
  @include('sidebar.organization')
 <script src="https://kit.fontawesome.com/a5878f8a6c.js" crossorigin="anonymous"></script>
@@ -61,3 +64,4 @@
         @endforeach
     </table>
  @endif
+ @endsection

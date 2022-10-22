@@ -1,3 +1,6 @@
+@extends('master')
+
+@section('content')
 @if (Auth::user()->role == 'admin')
 <title>Add User</title>
 @include('sidebar.admin')
@@ -65,3 +68,4 @@
     </table>
 
 @endif
+@endsection

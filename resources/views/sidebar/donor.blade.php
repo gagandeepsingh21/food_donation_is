@@ -60,12 +60,14 @@
         <!-- Sidebar -->
         <div class="bg-light border-right" id="sidebar-wrapper">
         <div class="sidebar-heading">
+            
                 @if( auth()->check() )
                     
                     <h3><p>{{ auth()->user()->role }} Dashboard</h3>    
                     <h4>Welcome, {{ auth()->user()->name }}</h4></div>
                 @endif
         <div class="list-group list-group-flush">
+            
              <a href="{{ route('user.dashboard') }}" class="list-group-item list-group-item-action bg-light">Dashboard</a>
              <a href="{{ route('user.vdonationposts') }}" class="list-group-item list-group-item-action bg-light">View Donation Posts</a>
              <a href="{{ route('user.vdonationmade') }}" class="list-group-item list-group-item-action bg-light">View Donation Made</a>

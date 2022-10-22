@@ -1,4 +1,7 @@
-  @if(Auth::user()->role == 'admin')
+ @extends('master')
+
+@section('content')
+ @if(Auth::user()->role == 'admin')
  @include('sidebar.admin')
  <script src="https://kit.fontawesome.com/a5878f8a6c.js" crossorigin="anonymous"></script>
  <title>Verified Users</title>
@@ -66,3 +69,4 @@
         @endforeach
     </table>
  @endif
+ @endsection

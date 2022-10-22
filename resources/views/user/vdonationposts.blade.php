@@ -1,3 +1,6 @@
+@extends('master')
+
+@section('content')
  @if(Auth::user()->role == 'donor')
  @include('sidebar.donor')
  <script src="https://kit.fontawesome.com/a5878f8a6c.js" crossorigin="anonymous"></script>
@@ -12,6 +15,7 @@
                 <th scope="col">Image</th>
                 <th scope="col">Title</th>
                 <th scope="col">No. of Meals</th>
+                {{-- <th scope="col">Meals remaining</th> --}}
                 <th scope="col">Location</th>
                 <th scope="col">Phone number</th>
                 <th scope="col">Date</th>
@@ -28,7 +32,8 @@
                       <img src="{{ asset('uploads/students/'.$don->image) }}" width="50px" height="50px" alt="donImage">
                     </td>
                     <td>{{ $don->dtitle }}</td>
-                    <td>{{ $don->dquantity}}</td>
+                    <td>{{ ($don->dquantity - $don->qmeals)}}</td>
+                    {{-- <td>{{ }}</td> --}}
                     <td>{{ $don->location}}</td>
                     <td>{{ $don->pnumber }}</td>
                     <td>{{ $don->date }}</td>
@@ -42,11 +47,13 @@
 
                     </td>
                     <td>
-                        <a  href=" {{ url('user/vapost',$don->id) }}" style="font-size:12px">View</a>
-                        <a  href=" {{ url('user/mdonation',$don->id) }}" style="font-size:12px">Donate</a>
+                        <a class="btn btn-primary" href=" {{ url('user/vapost',$don->id) }}" style="font-size:12px">View</a>
+                        <a class="btn btn-success" href=" {{ url('user/mdonation',$don->id) }}" style="font-size:12px">Donate</a>
                     </td>
                 </tr>
             </tbody>
+            
         @endforeach
     </table>
  @endif
+ @endsection

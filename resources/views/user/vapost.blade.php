@@ -1,3 +1,6 @@
+ @extends('master')
+
+@section('content')
  @if(Auth::user()->role == 'donor')
  @include('sidebar.donor')
  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
@@ -60,3 +63,4 @@
         
         </form>
  @endif
+ @endsection

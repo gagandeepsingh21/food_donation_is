@@ -1,3 +1,6 @@
+@extends('master')
+
+@section('content')
 @if (Auth::user()->role == 'organization')
 <title>Create Donation Post</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" >
@@ -68,3 +71,4 @@
 
         
 @endif
+@endsection

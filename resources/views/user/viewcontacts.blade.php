@@ -1,3 +1,6 @@
+@extends('master')
+
+@section('content')
 @if (Auth::user()->role == 'admin')
 
 <title>Add User</title>
@@ -5,7 +8,7 @@
 @include('sidebar.admin')
 <script src="https://kit.fontawesome.com/a5878f8a6c.js" crossorigin="anonymous"></script>
 
-     <h3>Feedback from users</h3>
+     <h3>Feedback/Complaints from users</h3>
 
     <table class="table table-hover">
         <thead class="thead-dark">
@@ -35,3 +38,4 @@
 
 
 @endif
+@endsection

@@ -1,3 +1,6 @@
+ @extends('master')
+
+@section('content')
  @if(Auth::user()->role == 'organization')
  @include('sidebar.organization')
  <title>View Donations Made</title>
@@ -65,3 +68,4 @@
         @endforeach
     </table>
  @endif
+ @endsection

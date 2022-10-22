@@ -37,7 +37,7 @@
 
             <div class="signupbox">
 
-                <h1>Feedback Form</h1>
+                <h1>Feedback/Complaint Form</h1>
                 
              @if (Session::get('success'))
                 <div class="alert alert-success">
@@ -52,7 +52,7 @@
                
 
                 <label for="organization_name" style="color:#130200;">Name</label>
-                <input type="text" name="orgname" class="form-control" placeholder="Organization name" value="{{ old('orgname') }}" >
+                <input type="text" name="orgname" class="form-control" placeholder="Name" value="{{ old('orgname') }}" >
                 <span class="text-danger">@error('name') {{ $message }} @enderror</span>
                 
                 <label for="email">Email</label>
@@ -68,7 +68,7 @@
                 <span class="text-danger">@error('address') {{ $message }} @enderror</span>
 
                 <label for="About">About</label>
-                <textarea name="about" rows="4" cols="60" placeholder="Please do let us know what we could improve on...." class="form-control"></textarea><br>
+                <textarea name="about" rows="4" cols="60" placeholder="Please do let us know what we could improve on or even do let us if you experience any issue regarding the donation posts on this platform...." class="form-control"></textarea><br>
 
             
                 <button type="submit" class="btn btn-primary" style="left:25%; width:50%;">Send Feedback</button><br><br>

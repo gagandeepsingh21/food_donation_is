@@ -6,7 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\User\UserController;
 use Illuminate\Http\Request;
 use App\Models\Donation;
+use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class PostDonationController extends Controller
 {
@@ -64,12 +66,29 @@ class PostDonationController extends Controller
     
     //view approved posts for donors
     function vposts(){
-        $dons = Donation::where('isset', '=', 1)->get();
+        // $uid = Auth::user();
+        // $did = Donation::where(['user_id','=',Auth::user->id,'dquantity']);
+        // $pid = Post::where([['user_id','=',Auth::user->id],
+        // ['donation_id','=',Donation::find($id),'qmeals']
+        // ]);
+        // $total = $did - $pid;
+    
 
+         $dons = DB::table('posts')
+                ->select('posts.*','donations.dquantity as dquantity','posts.qmeals as qmeals','users.name','users.role')
+                ->select(DB::raw('SUM(qmeals)'))
+                
+                
+                ->leftJoin('donations','donations.id','posts.donations_id')
+                ->leftJoin('users','users.id','posts.user_id')      
+                ->get();
+                 $dons = Donation::where('isset', '=', 1)->get();
+    
         return view('user.vdonationposts',compact('dons'))
                 ->with('i');
 
     }
+    
     
     //view approved posts for admins
      function approveddetails(){
