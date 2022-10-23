@@ -4,7 +4,7 @@
  @if(Auth::user()->role == 'admin')
  @include('sidebar.admin')
  <script src="https://kit.fontawesome.com/a5878f8a6c.js" crossorigin="anonymous"></script>
- <title>Verified Users</title>
+ <title>Verified Posts</title>
 
                      @if (Session::get('success'))
                          <div class="alert alert-success">
@@ -16,7 +16,7 @@
                              {{ Session::get('fail') }}
                         </div>
                      @endif
-
+                        <h3 style="text-align: center; padding:5px;">Verified Posts</h3>
     {{-- <table class="table table-hover">
         <thead class="thead-dark">
             <tr>

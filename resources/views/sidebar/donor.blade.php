@@ -19,7 +19,7 @@
         }
         #sidebar-wrapper {
         min-height: 100vh;
-        margin-left: -21rem;
+        margin-left: -21.5rem;
         -webkit-transition: margin .25s ease-out;
         -moz-transition: margin .25s ease-out;
         -o-transition: margin .25s ease-out;
@@ -47,7 +47,7 @@
             width: 100%;
         }
         #wrapper.toggled #sidebar-wrapper {
-            margin-left: -21rem;
+            margin-left: -21.5rem;
         }
         }
         .h3, h3 {

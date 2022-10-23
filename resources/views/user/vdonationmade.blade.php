@@ -4,6 +4,47 @@
  @if(Auth::user()->role == 'donor')
  @include('sidebar.donor')
  <title>View Donations Made</title>
+         <style>
+            body {
+        overflow-x: hidden;
+        }
+        #sidebar-wrapper {
+        min-height: 100vh;
+        margin-left: -18rem;
+        -webkit-transition: margin .25s ease-out;
+        -moz-transition: margin .25s ease-out;
+        -o-transition: margin .25s ease-out;
+        transition: margin .25s ease-out;
+        }
+        #sidebar-wrapper .sidebar-heading {
+        padding: 0.875rem 1.25rem;
+        font-size: 1.2rem;
+        }
+        #sidebar-wrapper .list-group {
+        width: 17rem;
+        }
+        #page-content-wrapper {
+        min-width: 100vw;
+        }
+        #wrapper.toggled #sidebar-wrapper {
+        margin-left: 0;
+        }
+        @media (min-width: 768px) {
+        #sidebar-wrapper {
+            margin-left: 0;
+        }
+        #page-content-wrapper {
+            min-width: 0;
+            width: 100%;
+        }
+        #wrapper.toggled #sidebar-wrapper {
+            margin-left: -18rem;
+        }
+        }
+        .h3, h3 {
+                font-size: 1.6rem;
+        }
+        </style>   
  <script src="https://kit.fontawesome.com/a5878f8a6c.js" crossorigin="anonymous"></script>
 
                  @if (Session::get('success'))

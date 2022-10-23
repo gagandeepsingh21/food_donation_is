@@ -1,11 +1,10 @@
-  @extends('master')
+   @extends('master')
 
 @section('content')
-  @if(Auth::user()->role == 'admin')
+ @if(Auth::user()->role == 'admin')
  @include('sidebar.admin')
  <script src="https://kit.fontawesome.com/a5878f8a6c.js" crossorigin="anonymous"></script>
- <title>Unverified Users</title>
-
+ <title>Unverified Posts</title>
 
                      @if (Session::get('success'))
                          <div class="alert alert-success">
@@ -17,8 +16,8 @@
                              {{ Session::get('fail') }}
                         </div>
                      @endif
-    <table class="table table-hover">
-        
+                        <h3 style="text-align: center; padding:5px;">Unverified Posts</h3>
+    {{-- <table class="table table-hover">
         <thead class="thead-dark">
             <tr>
                 <th scope="col">#</th>
@@ -31,10 +30,38 @@
                 <th scope="col">Status</th>
                 <th scope="col">Action</th>
             </tr>
-        </thead>
+        </thead> --}}
     
         @foreach ($donations as $donation)
-            <tbody>
+        <div style="width:350px; height:450px; border:1px solid gray; border-radius:5px;margin-top:5px; margin-left:35%;  text-align:center;"> 
+            <img src="{{ asset('uploads/students/'.$donation->image) }}"
+                       width="150px" height="150px" style="margin-left: 30px; margin-top:12px" alt="donImage">
+                    </td><br><br>
+           <strong>Donation Title: </strong> {{ $donation->dtitle }}<br>
+           <strong>Donation Quantity: </strong> Required {{ $donation->dquantity}} meals<br>
+           <strong>Donation Location: </strong> {{ $donation->location}}<br>
+           <strong>Contact Details: </strong> {{ $donation->pnumber }}<br>
+           <strong>Donation Date: </strong> {{ $donation->date }}<br><br>
+           <strong>Status: </strong> @if ($donation->isset==0)
+                        <label class="btn btn-sm btn-danger">Inactive</label><br><br>
+                        @else
+                        <label class="btn btn-sm btn-success">Active</label><br><br>
+                            
+                        @endif
+                        
+
+                    
+                    <a class="btn btn-primary" href=" {{ url('user/vverifiedpost',$donation->id) }}" style="font-size:12px">View</a>
+                    <a class="btn btn-success" href="{{ url('user/approved',$donation->id) }}" style="font-size:12px">
+                        Approve
+                    </a>
+                    
+
+</div><br>
+       
+
+
+            {{-- <tbody>
                 <tr>
                     <td>{{ ++$i  }}</td>
                     <td>
@@ -56,9 +83,9 @@
 
                     </td>
                     <td>
-                        <a class="btn btn-primary" href=" {{ url('user/vunverifiedposts',$donation->id) }}" style="font-size:12px">View</a>
-                        <a class="btn btn-success" href="{{ url('user/approved',$donation->id) }}" style="font-size:12px">
-                            Approve
+                      <a class="btn btn-primary" href=" {{ url('user/vverifiedpost',$donation->id) }}" style="font-size:12px">View</a>
+                        <a class="btn btn-danger" href="{{ url('user/disapprove',$donation->id) }}" style="font-size:12px">
+                            Reject
                         </a>
                         
                     </td>
@@ -66,8 +93,9 @@
                         
                     
                 </tr>
-            </tbody>
+            </tbody> --}}
         @endforeach
-    </table>
+    
  @endif
  @endsection
+
