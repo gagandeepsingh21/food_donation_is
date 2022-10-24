@@ -7,6 +7,7 @@ use App\Http\Controllers\User\UserController;
 use Illuminate\Http\Request;
 use App\Models\Donation;
 use App\Models\Post;
+use App\Models\Blog;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -192,6 +193,37 @@ class PostDonationController extends Controller
         
     }
 
+    function deactivate($id){
+       $getStatus = Donation::select('isset')->where('id',$id)->first();
+       if($getStatus->isset==1){
+            $status = 0;
+
+       }else{
+            $status = 1;
+       }
+       Donation::where('id',$id)->update(['isset'=>$status]);
+       return redirect()->back()->with('success','Status changed successfully!');
+   }
+
+   //blog post
+   function cblog(Request $request){
+       
+
+          $blog = new Blog();
+          
+
+          $blog->bname = $request->input('bname');
+          $blog->date = $request->input('bdate');
+          $blog->about = $request->input('about');
+
+          $blog->save();
+          return redirect()->back()->with('success','You have successfully created the blog post!');
+    }
+    function vblog(){
+        $vblogs = DB::select('select * from blogs');
+        return view('user.vblog',compact('vblogs'));
+
+    }
    
     
 }

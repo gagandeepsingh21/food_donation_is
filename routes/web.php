@@ -73,6 +73,10 @@ Route::prefix('user')->name('user.')->group(function(){
         Route::put('/updatedetails/{id}',[UserController::class,'updatedetails'])->name('updatedetails');
         Route::get('/vdmade',[DonationsMadeController::class,'vdmade'])->name('vdmade');
         Route::get('/received/{id}',[DonationsMadeController::class,'received']);
+        Route::get('/deactivate/{id}',[PostDonationController::class,'deactivate']);
+        Route::view('/blog','user.blog')->name('blog');
+        Route::post('/cblog',[PostDonationController::class,'cblog'])->name('cblog');
+        Route::get('/vblog',[PostDonationController::class,'vblog'])->name('vblog');
 
     });
 

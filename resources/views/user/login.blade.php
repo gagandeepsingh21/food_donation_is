@@ -101,7 +101,7 @@
                         
                         <a href="{{ url('/') }}" class="text-sm text-gray-700 dark:text-gray-500" id="navlogin">Home</a>
                         <a href="{{ route('user.userRegister') }}" class="text-sm text-gray-700 dark:text-gray-500" id="navSignup">Register</a>
-                         <a href="{{ route('user.userContact') }}" class="text-sm text-gray-700 dark:text-gray-500 " id="navfeedback">Feedback</a>
+                         <a href="{{ route('user.userContact') }}" class="text-sm text-gray-700 dark:text-gray-500 " id="navfeedback">Feedback/Complaint</a>
 
                         
                     @endauth

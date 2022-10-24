@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Feedback form</title>
+        <title>Feedback/Complaint form</title>
 
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -67,8 +67,9 @@
                 <input type="text" name="address" class="form-control" placeholder="address" value="{{ old('address') }}">
                 <span class="text-danger">@error('address') {{ $message }} @enderror</span>
 
-                <label for="About">About</label>
-                <textarea name="about" rows="4" cols="60" placeholder="Please do let us know what we could improve on or even do let us if you experience any issue regarding the donation posts on this platform...." class="form-control"></textarea><br>
+                <label for="About">Feedback/Complaint</label>
+                <textarea name="about" rows="4" cols="60" placeholder="Please do let us know what we could improve on or even do let us if you experience any issue regarding the donation posts on this platform..." class="form-control"></textarea>
+                 <small style="font-size:11px; color:red;">NB: Incase of issuses regarding the donation post please specify the Donation title so that a relevant action could taken against them!</small><br><br>
 
             
                 <button type="submit" class="btn btn-primary" style="left:25%; width:50%;">Send Feedback</button><br><br>

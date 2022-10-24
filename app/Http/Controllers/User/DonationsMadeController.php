@@ -38,6 +38,8 @@ class DonationsMadeController extends Controller
         $donate = Donation::find($id);
         return view('user/makedonation',compact('donate'));
     }
+
+
    function index(){
     $views = DB::table('posts')
                 ->select('posts.*','donations.dtitle','users.name','users.role')
@@ -47,6 +49,8 @@ class DonationsMadeController extends Controller
     return view('user.vdonationmade',compact('views'));
 
    }
+
+
    function vdmade(){
     $stores = DB::table('posts')
                 ->select('posts.*','donations.dtitle','users.name','users.role')
@@ -56,6 +60,8 @@ class DonationsMadeController extends Controller
     return view('user.vdmade',compact('stores'));
 
    }
+
+   
    function report1(){
         $reports = DB::table('posts')
                 ->select('posts.*','donations.dtitle as Dtitle','users.name as Name','users.role as Role')

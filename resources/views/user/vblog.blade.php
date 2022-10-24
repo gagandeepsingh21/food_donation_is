@@ -51,27 +51,18 @@
 
    <h3 style="text-align: center; padding:5px;">Approved posts</h3>   
     
-        @foreach ($dons as $don)
-         <div style="width:350px; height:450px; border:1px solid gray; border-radius:5px;margin-top:5px; margin-left:37%;  text-align:center;"> 
-            <img src="{{ asset('uploads/students/'.$don->image) }}"
-                       width="150px" height="150px" style="margin-left: 30px; margin-top:12px" alt="donImage">
-                    </td><br><br>
-           <strong>Donation Title: </strong> {{ $don->dtitle }}<br>
-           <strong>Donation Quantity: </strong> Requi{{ $don->dquantity}} meals<br>
-           <strong>Donation Location: </strong> {{ $don->location}}<br>
-           <strong>Contact Details: </strong> {{ $don->pnumber }}<br>
-           <strong>Donation Date: </strong> {{ $don->date }}<br><br>
-           <strong>Status: </strong> @if ($don->isset==0)
-                        <label class="btn btn-sm btn-danger">Inactive</label><br><br>
-                        @else
-                        <label class="btn btn-sm btn-success">Active</label><br><br>
-                            
-                        @endif
+        @foreach ($vblogs as $vblog)
+         <div style="width:350px; height:350px; border:1px solid gray; border-radius:5px;margin-top:5px; margin-left:37%;  text-align:center;"> 
+            
+           <strong>Blog Name: </strong> {{ $vblog->bname }}<br>
+           <strong>Date Posted: </strong> {{ $vblog->date}}<br>
+           <strong>Blog message: </strong><br> <p>{{ $vblog->about}}</p><br>
+           
+           
                         
 
                     
-                    <a class="btn btn-primary" href=" {{ url('user/vapost',$don->id) }}" style="font-size:12px">View</a>
-                    <a class="btn btn-success" href=" {{ url('user/mdonation',$don->id) }}" style="font-size:12px">Donate</a>
+                    
                     
 
 </div><br>

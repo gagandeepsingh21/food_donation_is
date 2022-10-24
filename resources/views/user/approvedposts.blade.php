@@ -56,6 +56,7 @@
                         <a class="btn btn-primary" href=" {{ url('user/vapprovedpost',$don->id) }}" style="font-size:12px">View</a>
                         <a class="btn btn-success" href="{{ url('user/paedit',$don->id) }}" style="font-size:12px">Edit</i></a>
                         <a class="btn btn-danger" href=" {{ url('user/deleteapprpost',$don->id) }}" style="font-size:12px">Delete</a>
+                         <a class="btn btn-danger" href=" {{ url('user/deactivate',$don->id) }}" style="font-size:12px">Close Donation</a>
                     
 
 </div><br>

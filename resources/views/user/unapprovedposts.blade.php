@@ -4,7 +4,7 @@
  @if(Auth::user()->role == 'organization')
  @include('sidebar.organization')
 <script src="https://kit.fontawesome.com/a5878f8a6c.js" crossorigin="anonymous"></script>
- <title>Unverified Users</title>
+ <title>Unapproved/Closed Donations</title>
 
                     @if (Session::get('success'))
                          <div class="alert alert-success">
@@ -16,7 +16,7 @@
                              {{ Session::get('fail') }}
                         </div>
                      @endif
-         <h3 style="text-align: center; padding:5px;">Posts Requiring Approval</h3>   
+         <h3 style="text-align: center; padding:5px;">Posts Requiring Approval/Closed posts</h3>   
 
     {{-- <table class="table table-hover">
         <thead class="thead-dark">
@@ -55,7 +55,7 @@
                         <a class="btn btn-primary" href=" {{ url('user/vapprovedpost',$don->id) }}" style="font-size:12px">View</a>
                         <a class="btn btn-success" href="{{ url('user/paedit',$don->id) }}" style="font-size:12px">Edit</i></a>
                         <a class="btn btn-danger" href=" {{ url('user/deleteapprpost',$don->id) }}" style="font-size:12px">Delete</a>
-                    
+
 
 </div><br>
             {{-- <tbody>
