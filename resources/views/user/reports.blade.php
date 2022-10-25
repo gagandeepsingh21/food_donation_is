@@ -1,11 +1,4 @@
- {{-- @if(Auth::user()->role == 'organization')
- @include('sidebar.organization')
- <script src="https://kit.fontawesome.com/a5878f8a6c.js" crossorigin="anonymous"></script>
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
-  
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
- <p>organization reports </p>
- @endif --}}
+
 
 @extends('master')
 
@@ -13,13 +6,13 @@
   @if(Auth::user()->role == 'admin')
  @include('sidebar.admin')
  <script src="https://kit.fontawesome.com/a5878f8a6c.js" crossorigin="anonymous"></script>
- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+ <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
   
 
 
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"> 
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script> 
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.7.1/js/dataTables.buttons.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
@@ -50,14 +43,33 @@
         </tbody>
         
     </table>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+
+
+
+
+ @endif
+ @endsection
+
+ @section('javascripts')
+
+     
      <script>
+//         $(document).ready(function() {
+//     $('#example').DataTable( {
+//         dom: 'Bfrtip',
+//         buttons: [
+//             'copy', 'csv', 'excel', 'pdf', 'print'
+//         ]
+//     } );
+// } );
         $(document).ready( function(){
             $('#example').DataTable({
-                "processing":true,
-                "serverSide":true,
-                "ajax":"{{ route('user.reports') }}",
-                //  dom: 'Bfrtip',
+                processing:true,
+                serverSide:true,
+                searching:true,
+                ajax:"{{ route('user.reports') }}",
+                // dom: 'Bfrtip',
+
                 columns:[
                 {data: 'Name'},
                 {data: 'Dtitle'},
@@ -67,52 +79,28 @@
                 {data: 'message'},
                 {data: 'pnum'},
                 {data: 'address'},
-                {data: 'date'} 
-        
-                ],
-                buttons:[
-                    'copy'
-                ]
+                {data: 'date'},
+                {data: 'isset'}
+            ]
+        //         ],
+               
+        //          buttons: [
+        //     'copyHtml5',
+        //     'excelHtml5',
+        //     'csvHtml5',
+        //     'pdfHtml5'
+        // ]
+               
 
                 
             });
         });
     </script>
-   {{-- <script>
-//     jQuery(document).ready(function() {
-//       $('#example').DataTable(
-//         {
-//         processing:true,
-//         serverSide:true,
-//         dom: 'Bfrtip',
-//         columns: [
-//            {data: ''} 
-//         ]
-        
-//         },
-//         buttons: [
-//                     'copy',
-//                     'excel',
-//                     'csv',
-//                     'pdf',
-//                     'print'
-//                 ],
-//       );
-     
-//     } );
-//     </script> --}}
 
-
- @endif
  @endsection
 
- 
-  {{-- @if(Auth::user()->role == 'Donor')
- @include('sidebar.donor')
- <script src="https://kit.fontawesome.com/a5878f8a6c.js" crossorigin="anonymous"></script>
- <p>Donor reports </p>
- @endif
-  @endsection --}}
 
+ 
+  
 
  

@@ -10,6 +10,7 @@ use App\Models\Post;
 use App\Models\Donation;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Yajra\Datatables\Facades\Datatables;
 
 
 class DonationsMadeController extends Controller
@@ -62,13 +63,15 @@ class DonationsMadeController extends Controller
    }
 
    
-   function report1(){
+   function report1(Request $request){
+    if($request->ajax()){
         $reports = DB::table('posts')
-                ->select('posts.*','donations.dtitle as Dtitle','users.name as Name','users.role as Role')
+                ->select('posts.*','donations.dtitle as Dtitle','users.name as Name','users.role as Role','donations.isset')
                 ->leftJoin('donations','donations.id','posts.donations_id')
-                ->leftJoin('users','users.id','posts.user_id')      
-                ->get();
-    return view('user.reports',compact('reports'));
+                ->leftJoin('users','users.id','posts.user_id');
+        return datatables($reports)->make(true);
+    }
+    return view('user.reports');
    }
 
    function received($id){
