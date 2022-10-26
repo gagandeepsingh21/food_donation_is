@@ -23,7 +23,7 @@ class ContactController extends Controller
             
             'fromEmail'=>$request->email,
             'fromName'=>$request->orgname,
-            'subject' =>'Regarding Organizations Account Creation',
+            'subject' =>'Feedback/Complaint From Users',
             'body' => $request->about,
             'pnumber' => $request->pnumber,
             'address' => $request->address
@@ -33,7 +33,7 @@ class ContactController extends Controller
             $message->to('fooddonation99@gmail.com');
             $message->from($mail_data['fromEmail'],$mail_data['fromEmail']);
             
-            $message->subject($mail_data['subject']);
+            $message->subject($mail_data['subject'] );
            
         });
         Form::create($request->all());

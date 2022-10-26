@@ -49,7 +49,6 @@
                  <label for="donDate">Date of Donation</label>
                 <input type="date" name="dondate" class="form-control"  value="{{ $adons->date}}"><br><br>
 
-                <button class="btn btn-success" style="width: 100%;"><a href="{{ route('user.makedonation') }}" style="text-decoration: none; color:white;"> Make Donation</a></button>
              
                  
                  

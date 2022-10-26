@@ -40,7 +40,7 @@
                 <span class="text-danger">@error('dtitle') {{ $message }} @enderror</span><br>
 
                 <label for="Description">Description</label>
-                <textarea name="description" rows="4" cols="60" placeholder="Please give a brief description about your donation drive...." class="form-control" value="{{ old('description') }}"></textarea><br>
+                <textarea name="description" rows="4" cols="60" placeholder="Please give a brief description about your donation drive for example like where the donation is carried including other details..." class="form-control" value="{{ old('description') }}"></textarea><br>
 
                 <label for="role">Donation Quantity</label>
                  <input type="number" name="dquantity" class="form-control" placeholder="Donation Quantity" value="{{ old('dquanity') }}">
@@ -51,7 +51,7 @@
                 <span class="text-danger">@error('pnumber') {{ $message }} @enderror</span><br>
 
                 <label for="Address">Address details</label>
-                <input type="text" name="address" class="form-control" placeholder="address" value="{{ old('address') }}">
+                <input type="text" name="address" class="form-control" placeholder="Please enter your head office location" value="{{ old('address') }}">
                 <span class="text-danger">@error('address') {{ $message }} @enderror</span><br>
 
                  <label for="donDate">Donation post date</label>

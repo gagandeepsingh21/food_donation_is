@@ -22,9 +22,9 @@
                 </div>
             @endif
               
-            <button type="submit" class="btn btn-primary" style="float: right; margin:8px;" > Make Money donation </button><br>
+            {{-- <button type="submit" class="btn btn-primary" style="float: right; margin:8px;" > Make Money donation </button><br>
             
-            <hr style="margin-top:30px;">
+            <hr style="margin-top:30px;"> --}}
             <h3 class="col-md-6 offset-md-3">Make Donation</h3>
             
                
@@ -38,7 +38,7 @@
                 </select><br>
 
                  <label for="quantity">Please write the number of meals you would like to donate: </label><br>
-                 <input type="number" name="qmeals" class="form-control" placeholder="Number of meals" value="{{ old('qmeals') }}">
+                 <input type="number" name="qmeals" class="form-control" placeholder="Number of meals..." value="{{ old('qmeals') }}">
                 <span class="text-danger">@error('qmeals') {{ $message }} @enderror</span><br>
 
 
@@ -51,13 +51,18 @@
                 <span class="text-danger">@error('pnum') {{ $message }} @enderror</span><br>
 
                 <label for="Address">Address details</label>
-                <input type="text" name="address" class="form-control" placeholder="My address" value="{{ old('address') }}">
+                <input type="text" name="address" class="form-control" placeholder="Enter donation pickup location..." value="{{ old('address') }}">
                 <span class="text-danger">@error('address') {{ $message }} @enderror</span><br>
 
                  <label for="date_donated">Date donated:</label>
                 <input type="date" name="date" class="form-control"  value="{{ old('date') }}"><br>
                  <span class="text-danger">@error('date') {{ $message }} @enderror</span>
                  
+
+                <small style="font-size:11px; color:red;">NB: Please ensure that you are near the 
+                donation location if you are donating cooked food so that it does 
+                not go bad until it reaches the need people! Otherwise please donate the packed food items. Thank you! </small><br><br>
+
                 <button type="submit" class="btn btn-primary" style="left:32%; width:100%;">Donate</button><br><br>
                
                 

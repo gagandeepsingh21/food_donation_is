@@ -57,7 +57,16 @@
                  <label for="donDate">Date of Donation</label>
                 <input type="date" name="dondate" class="form-control"  value="{{ $donposts->date}}" readonly><br><br>
 
-           <button class="btn btn-danger" style="width: 100%;"> <a  href="{{ url('user/disapprove',$donposts->id) }}" style="font-size:12px; color:white; text-decoration:none;">Reject</a></button>
+                @if ($donposts->isset==0)
+                        <button class="btn btn-success"  style="width: 100%;"><a href="{{ url('user/approved',$donposts->id) }}" style="font-size:12px; color:white; text-decoration:none;">
+                        Approve
+                    </a></button>
+                        @else
+                       <button class="btn btn-danger" style="width: 100%;"> <a  href="{{ url('user/disapprove',$donposts->id) }}" style="font-size:12px; color:white; text-decoration:none;">Reject</a></button>
+
+                            
+                        @endif
+                
              
                  
                  
@@ -67,7 +76,7 @@
             </div> 
                 
         
-            </div>
+            </div><br>
         
         </form>
  @endif

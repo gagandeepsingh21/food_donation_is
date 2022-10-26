@@ -26,8 +26,6 @@
     <h4 style="text-align: center;">Donations made report</h4><br>
     <div class="table-responsive">
 <table id="example" class="table table-striped table-hover table-bordered">
-    
-        <thead>
             
             <tr> 
                  <th scope="col">Image</th>
@@ -49,7 +47,52 @@
         
     </table>
     </div>
-</div>
+</div><br><br><br><br><br><br><br><br><br><br>
+
+{{-- <div class="container box">
+    <h4 style="text-align: center;">Donations made report</h4><br>
+    <div class="table-responsive">
+<table id="report2" class="table table-striped table-hover table-bordered">
+    
+        <thead>
+            
+            <tr> 
+                 <th scope="col">Image</th>
+                <th scope="col">Donors name</th>
+                <th scope="col">Donation Title</th>
+                <th scope="col">Role</th>
+                <th scope="col">Donation Type</th>
+                <th scope="col">Meals Donated</th>
+                <th scope="col"> Donor's Message</th>
+                <th scope="col">Phone number</th>
+                <th scope="col">Date Donated</th>
+                <th scope="col">Status</th>
+              
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Tiger Nixon</td>
+                <td>System Architect</td>
+                <td>Edinburgh</td>
+                <td>61</td>
+                <td>2011-04-25</td>
+                <td>$320,800</td>
+            </tr>
+            <tr>
+                <td>Garrett Winters</td>
+                <td>Accountant</td>
+                <td>Tokyo</td>
+                <td>63</td>
+                <td>2011-07-25</td>
+                <td>$170,750</td>
+            </tr>
+           
+        </tbody>
+        
+    </table>
+    </div>
+</div> --}}
 
 
 
@@ -62,8 +105,8 @@
      <script>
         $(document).ready( function(){
             $('#example').DataTable({
-                processing:true,
-                serverSide:true,
+                 processing:true,
+                // serverSide:true,
                 paging:true,
                 orderClasses:false,
                 dom:'Blfrtip',
@@ -83,6 +126,37 @@
                 {data: 'pnum'},
                 {data: 'date'},
                 {data: 'dstatus'}
+            ],
+                
+           
+                buttons: [
+                    'pdf','excel','print'
+                ],
+
+                lengthMenu: [ [10, 25, 50, -1], [5, 10, 25, "All"]],
+
+        
+
+                
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready( function(){
+            $('#report2').DataTable({
+                processing:true,
+                serverSide:true,
+                paging:true,
+                orderClasses:false,
+                dom:'Blfrtip',
+                responsive:true,
+                
+                ajax:"{{ route('user.reports') }}",
+                
+
+                columns:[
+                
             ],
                 
            

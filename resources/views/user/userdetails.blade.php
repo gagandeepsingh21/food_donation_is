@@ -16,6 +16,7 @@
                              {{ Session::get('fail') }}
                         </div>
                      @endif
+    <h3>Block User Login</h3>                 
     <table class="table table-hover">
         <thead class="thead-dark">
             <tr>
