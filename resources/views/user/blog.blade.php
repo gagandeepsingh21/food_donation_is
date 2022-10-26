@@ -36,7 +36,7 @@
                 <input type="date" name="bdate" class="form-control" value="{{ old('bdate') }}">
                 <span class="text-danger">@error('bdate') {{ $message }} @enderror</span><br>
 
-                 <label for="About">Feedback/Complaint</label>
+                 <label for="About">Blog message</label>
                 <textarea name="about" rows="6" cols="60" placeholder="Write your blog about the wastage of food and Donation here..." class="form-control"></textarea><br>
 
                 <button type="submit" class="btn btn-primary" style="left:32%;">Post blog</button><br>

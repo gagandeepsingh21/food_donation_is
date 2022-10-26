@@ -66,7 +66,7 @@ class DonationsMadeController extends Controller
    function report1(Request $request){
     if($request->ajax()){
         $reports = DB::table('posts')
-                ->select('posts.*','donations.dtitle as Dtitle','users.name as Name','users.role as Role','donations.isset')
+                ->select('posts.*','donations.dtitle as Dtitle','users.name as Name','users.role as Role','donations.isset','donations.image as image')
                 ->leftJoin('donations','donations.id','posts.donations_id')
                 ->leftJoin('users','users.id','posts.user_id');
         return datatables($reports)->make(true);

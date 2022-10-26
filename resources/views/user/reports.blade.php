@@ -10,9 +10,9 @@
   
 
 
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"> 
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script> 
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script> 
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.7.1/js/dataTables.buttons.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
@@ -21,19 +21,25 @@
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.html5.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.print.min.js"></script>
 
-    <h2></h2>
+
+<div class="container box">
+    <h4 style="text-align: center;">Donations made report</h4><br>
+    <div class="table-responsive">
 <table id="example" class="table table-striped table-hover table-bordered">
+    
         <thead>
-            <tr>
+            
+            <tr> 
+                 <th scope="col">Image</th>
                 <th scope="col">Donors name</th>
                 <th scope="col">Donation Title</th>
                 <th scope="col">Role</th>
                 <th scope="col">Donation Type</th>
                 <th scope="col">Meals Donated</th>
-                <th scope="col">Message</th>
+                <th scope="col"> Donor's Message</th>
                 <th scope="col">Phone number</th>
-                <th scope="col">My Location</th>
-                <th scope="col">Date</th>
+            
+                <th scope="col">Date Donated</th>
                 <th scope="col">Status</th>
               
             </tr>
@@ -43,7 +49,8 @@
         </tbody>
         
     </table>
-
+    </div>
+</div>
 
 
 
@@ -54,23 +61,20 @@
 
      
      <script>
-//         $(document).ready(function() {
-//     $('#example').DataTable( {
-//         dom: 'Bfrtip',
-//         buttons: [
-//             'copy', 'csv', 'excel', 'pdf', 'print'
-//         ]
-//     } );
-// } );
         $(document).ready( function(){
             $('#example').DataTable({
                 processing:true,
                 serverSide:true,
-                searching:true,
+                paging:true,
+                orderClasses:false,
+                dom:'Blfrtip',
+                responsive:true,
+                
                 ajax:"{{ route('user.reports') }}",
-                // dom: 'Bfrtip',
+                
 
                 columns:[
+                {data: 'image'},
                 {data: 'Name'},
                 {data: 'Dtitle'},
                 {data: 'Role'},
@@ -78,19 +82,17 @@
                 {data: 'qmeals'},
                 {data: 'message'},
                 {data: 'pnum'},
-                {data: 'address'},
                 {data: 'date'},
-                {data: 'isset'}
-            ]
-        //         ],
-               
-        //          buttons: [
-        //     'copyHtml5',
-        //     'excelHtml5',
-        //     'csvHtml5',
-        //     'pdfHtml5'
-        // ]
-               
+                {data: 'dstatus'}
+            ],
+                
+           
+                buttons: [
+                    'copy','csv','excel','pdf','print'
+                ]
+            
+
+        
 
                 
             });
