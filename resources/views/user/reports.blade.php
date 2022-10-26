@@ -38,7 +38,6 @@
                 <th scope="col">Meals Donated</th>
                 <th scope="col"> Donor's Message</th>
                 <th scope="col">Phone number</th>
-            
                 <th scope="col">Date Donated</th>
                 <th scope="col">Status</th>
               
