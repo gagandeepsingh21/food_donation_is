@@ -96,7 +96,7 @@
                         
                         <a href="{{ route('user.userLogin') }}" class="text-sm text-gray-700 dark:text-gray-500" id="navlogin">Log in</a>
                         <a href="{{ route('user.userRegister') }}" class="text-sm text-gray-700 dark:text-gray-500" id="navSignup">Register</a>
-                         <a href="{{ route('user.userContact') }}" class="text-sm text-gray-700 dark:text-gray-500 " id="navfeedback">Feedback</a>
+                         <a href="{{ route('user.userContact') }}" class="text-sm text-gray-700 dark:text-gray-500 " id="navfeedback">Feedback/Complaint</a>
 
                         {{-- @if (Route::has('register'))
                             <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
@@ -106,7 +106,7 @@
             @endif
 
             <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                <h1>Welcome to Food Donation </h1>
+                                <h1>Welcome to the Food Donation System </h1>
                                 <h3>Please click on the button below either to sign up and <a href="{{ route('user.userLogin') }}" class="login">Log in</a> to the system to make a donation or <a href="{{ route('user.userRegister') }}" class="signup">Register</a> your organization!</h3>
                                 <h3>Please do also leave a <a href="{{ route('user.userContact') }}" class="contact">feedback</a> so that we could continuously work on serving you better!</h3>
                                 

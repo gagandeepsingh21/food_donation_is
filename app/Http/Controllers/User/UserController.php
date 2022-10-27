@@ -45,16 +45,18 @@ class UserController extends Controller
               'email'=>'required|email|exists:users,email',
               'password'=>'required|min:4|max:30'
         ]);
-        $email= $request->email;
-        $password = $request->password;
-        if(Auth::attempt(['email' => $email, 'password' => $password,'status'=> 1])){
+        $email = $request->email;
+        $password= $request->password;
+        if (Auth::attempt(['email' => $email, 'password' => $password,'status'=>1])){
             return redirect()->route('user.dashboard');
-        }elseif(Auth::attempt(['email' => $email, 'password' => $password,'status'=> 0])){
-            return redirect()->route('user.userLogin')->with('fail','Your account has been blocked. Please contact administrator!');
+        }elseif(Auth::attempt(['email' => $email, 'password' => $password,'status'=>null])){
+            return redirect()->route('user.userLogin');
         }else{
-             return redirect()->route('user.userLogin')->with('fail','Your email or Password is incrorrect! Please check again');
-
+            return  redirect()->route('user.userLogin')->with('fail', 'Incorrect Credentials or Your account has been banned');
         }
+        
+        
+
 
         // $creds = $request->only('email','password');
         

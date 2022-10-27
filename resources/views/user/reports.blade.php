@@ -27,7 +27,8 @@
     <div class="table-responsive">
 <table id="example" class="table table-striped table-hover table-bordered">
             
-            <tr> 
+    <thead>   
+    <tr> 
                  <th scope="col">Image</th>
                 <th scope="col">Donors name</th>
                 <th scope="col">Donation Title</th>

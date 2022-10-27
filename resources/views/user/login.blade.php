@@ -131,7 +131,7 @@
                  <span class="text-danger">@error('email') {{ $message }} @enderror</span><br>
                 
                 <label for="Password">Password</label>
-                <input type="password" name="password" placeholder="Password" value="{{ old('password') }}"><br>
+                <input type="password" name="password" placeholder="password" value="{{ old('password') }}"><br>
                 <span class="text-danger">@error('password') {{ $message }} @enderror</span><br>
 
                 <button type="submit" name="login_user" class="btn">Log in</button><br><br><br><br>
