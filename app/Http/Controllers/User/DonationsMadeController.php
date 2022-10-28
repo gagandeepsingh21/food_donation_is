@@ -44,6 +44,7 @@ class DonationsMadeController extends Controller
    function index(){
     $views = DB::table('posts')
                 ->select('posts.*','donations.dtitle','users.name','users.role')
+                ->where('posts.user_id' , '=', Auth::user()->id)
                 ->leftJoin('donations','donations.id','posts.donations_id')
                 ->leftJoin('users','users.id','posts.user_id')      
                 ->get();
