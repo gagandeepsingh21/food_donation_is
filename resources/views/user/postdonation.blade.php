@@ -36,7 +36,8 @@
                 <span class="text-danger">@error('pimage') {{ $message }} @enderror</span><br>
                 
                 <label  for="title">Donation Title</label>
-                <input type="text" name="dtitle" class="form-control" placeholder="Donation name" value="{{ old('dtitle') }}">
+                <input type="text" name="dtitle" class="form-control" placeholder="Donation name (Mention Donation location + Hunger Drive)" value="{{ old('dtitle') }}">
+                <small style="color: red;">e.g 'Kajaido Hunger Drive'</small><br>
                 <span class="text-danger">@error('dtitle') {{ $message }} @enderror</span><br>
 
                 <label for="Description">Description</label>

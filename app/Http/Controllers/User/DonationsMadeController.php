@@ -74,6 +74,26 @@ class DonationsMadeController extends Controller
     }
     return view('user.reports');
    }
+//     function report2(Request $request){
+//     if($request->ajax()){
+//         $reports = DB::table('posts')
+//                 ->select('posts.*','donations.dtitle as Dtitle','users.name as Name','users.role as Role','donations.isset','donations.image as image')
+//                 ->leftJoin('donations','donations.id','posts.donations_id')
+//                 ->leftJoin('users','users.id','posts.user_id');
+//         return datatables($reports)->make(true);
+//     }
+//     return view('user.reports');
+//    }
+    function report2(Request $request){
+    if($request->ajax()){
+        $report1 = DB::table('donations')
+                ->select('donations.*','users.name as Name','users.role as Role','users.name')
+                ->leftJoin('users','users.id','donations.user_id');
+               
+        return datatables($report1)->make(true);
+    }
+    return view('user.report1a');
+   }
 
    function received($id){
        $getStatus = Post::select('dstatus')->where('id',$id)->first();

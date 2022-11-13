@@ -22,7 +22,7 @@
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.print.min.js"></script>
 
 
-<div class="container box">
+{{-- <div class="container box">
     <h4 style="text-align: center;">Donations made report</h4><br>
     <div class="table-responsive">
 <table id="example" class="table table-striped table-hover table-bordered">
@@ -48,9 +48,9 @@
         
     </table>
     </div>
-</div><br><br><br><br>
+</div><br><br><br><br> --}}
 
-{{-- <div class="container box">
+<div class="container box">
     <h4 style="text-align: center;">Organizations Posts Report </h4><br>
     <div class="table-responsive">
 <table id="report" class="table table-striped table-hover table-bordered">
@@ -59,14 +59,14 @@
             
             <tr> 
                  <th scope="col">Image</th>
-                <th scope="col">Donors name</th>
-                <th scope="col">Donation Title</th>
+                <th scope="col">Organization name</th>
                 <th scope="col">Role</th>
-                <th scope="col">Donation Type</th>
-                <th scope="col">Meals Donated</th>
-                <th scope="col"> Donor's Message</th>
-                <th scope="col">Phone number</th>
-                <th scope="col">Date Donated</th>
+                <th scope="col">Donation Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Quantity Required</th>
+                <th scope="col"> Org contact number</th>
+                <th scope="col">Location</th>
+                <th scope="col">Date</th>
                 <th scope="col">Status</th>
               
             </tr>
@@ -76,7 +76,7 @@
            
         </tbody>
         
-    </table> --}}
+    </table>
     </div>
 </div>
 
@@ -88,7 +88,7 @@
  @section('javascripts')
 
      
-     <script>
+     {{-- <script>
         $(document).ready( function(){
             $('#example').DataTable({
                  processing:true,
@@ -126,9 +126,9 @@
                 
             });
         });
-    </script>
+    </script> --}}
 
-    {{-- <script>
+    <script>
         $(document).ready( function(){
             $('#report').DataTable({
                 processing:true,
@@ -137,31 +137,31 @@
                 orderClasses:false,
                 dom:'Blfrtip',
                 responsive:true,
-                ajax:"{{ route('user.reports') }}",
+                ajax:"{{ route('user.report1a') }}",
                 
 
                 columns:[
-                // {data: 'image'},
-                // {data: 'Name'},
-                // {data: 'Role'},
-                // {data: 'dtitle'},
-                // {data: 'description'},
-                // {data: 'dquantity'},
-                // {data: 'pnumber'},
-                // {data: 'location'},
-                // {data: 'date'},
-                // {data: 'isset'},
-                
                 {data: 'image'},
                 {data: 'Name'},
-                {data: 'Dtitle'},
                 {data: 'Role'},
-                {data: 'foodtype'},
-                {data: 'qmeals'},
-                {data: 'message'},
-                {data: 'pnum'},
+                {data: 'dtitle'},
+                {data: 'description'},
+                {data: 'dquantity'},
+                {data: 'pnumber'},
+                {data: 'location'},
                 {data: 'date'},
-                {data: 'dstatus'}
+                {data: 'isset'},
+                
+                // {data: 'image'},
+                // {data: 'Name'},
+                // {data: 'Dtitle'},
+                // {data: 'Role'},
+                // {data: 'foodtype'},
+                // {data: 'qmeals'},
+                // {data: 'message'},
+                // {data: 'pnum'},
+                // {data: 'date'},
+                // {data: 'dstatus'}
             
             ],
                 
@@ -176,7 +176,7 @@
                 
             });
         });
-    </script> --}}
+    </script>
 
  @endsection
 
