@@ -75,8 +75,8 @@
             <a href="{{ route('user.postdonation') }}" class="list-group-item list-group-item-action bg-light">Post dontation info</a>
             <a href="{{ route('user.approvedposts') }}" class="list-group-item list-group-item-action bg-light">View Approved posts</a>
             <a href="{{ route('user.unapprovedposts') }}" class="list-group-item list-group-item-action bg-light">Posts pending approval</a>
-            <a href="{{ route('user.vdmade' )}}" class="list-group-item list-group-item-action bg-light">View Donations made</a>
-            <a href="#" class="list-group-item list-group-item-action bg-light">Reports</a>
+            <a href="{{ route('user.vdmade' ) }}" class="list-group-item list-group-item-action bg-light">View Donations made</a>
+            <a href="{{ route('user.report') }}" class="list-group-item list-group-item-action bg-light">Reports</a>
              <a href="{{ route('user.logout') }}" class="list-group-item list-group-item-action bg-light" 
             onclick="event.preventDefault();document.getElementById('logout-form').submit();" >Logout</a>
                                      <form action="{{ route('user.logout') }}" method="post" class="d-none" id="logout-form">@csrf</form>

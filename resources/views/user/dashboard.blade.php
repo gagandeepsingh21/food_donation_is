@@ -18,7 +18,7 @@
  <div class="container">
         <div class="row">
             <div class="col-md-6 offset-md-3" style="margin-top: 10px">
-                 {{-- <h4>Organization Dashboard</h4><hr> --}}
+                 <h4>My Details</h4><hr>
                  <form action="{{ url('user/updatedetails',auth()->user()->id) }}" method="post"> 
                     @csrf
                     @method('PUT')
@@ -90,7 +90,7 @@
  <div class="container">
         <div class="row">
             <div class="col-md-6 offset-md-3" style="margin-top: 10px">
-                 {{-- <h4>Organization Dashboard</h4><hr> --}}
+                 <h4>My Details</h4><hr>
                  <form action="{{ url('user/updatedetails',auth()->user()->id) }}" method="post"> 
                     @csrf
                     @method('PUT')
@@ -163,7 +163,7 @@
      <div class="container">
         <div class="row">
             <div class="col-md-6 offset-md-3" style="margin-top: 10px">
-                 {{-- <h4>Organization Dashboard</h4><hr> --}}
+                 <h4>My Details</h4><hr>
                  <form action="{{ url('user/updatedetails',auth()->user()->id) }}" method="post"> 
                     @csrf
                     @method('PUT')

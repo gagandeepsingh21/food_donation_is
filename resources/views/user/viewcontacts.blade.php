@@ -8,7 +8,7 @@
 @include('sidebar.admin')
 <script src="https://kit.fontawesome.com/a5878f8a6c.js" crossorigin="anonymous"></script>
 
-     <h3>Feedback/Complaints from users</h3>
+     <h3>Feedback/Complaints From Users</h3>
 
     <table class="table table-hover">
         <thead class="thead-dark">

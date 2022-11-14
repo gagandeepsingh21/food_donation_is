@@ -45,6 +45,8 @@ Route::prefix('user')->name('user.')->group(function(){
         Route::post('/logout', [UserController::class, 'logout'])->name('logout');
         Route::get('/reports', [DonationsMadeController::class,'report1'])->name('reports');
         Route::get('/report1a', [DonationsMadeController::class,'report2'])->name('report1a');
+        Route::get('/report2a', [DonationsMadeController::class,'report3'])->name('report2a');
+        Route::get('/report', [DonationsMadeController::class,'reportorg'])->name('report');
         Route::view('/adduser','user.adduser')->name('adduser');
         Route::post('/addadmin',[UserController::class,'addadmin'])->name('addadmin');
         Route::get('/blocked/{id}',[UserController::class,'blocked']);

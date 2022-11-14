@@ -76,6 +76,7 @@
             <a href="{{ route('user.blog') }}" class="list-group-item list-group-item-action bg-light">Create Blog</a>
             <a href="{{ route('user.reports') }}" class="list-group-item list-group-item-action bg-light">Report 1</a>
             <a href="{{ route('user.report1a') }}" class="list-group-item list-group-item-action bg-light">Report 2</a>
+             <a href="{{ route('user.report2a') }}" class="list-group-item list-group-item-action bg-light">Report 3</a>
             <a href="{{ route('user.logout') }}" class="list-group-item list-group-item-action bg-light" 
             onclick="event.preventDefault();document.getElementById('logout-form').submit();" >Logout</a>
                                      <form action="{{ route('user.logout') }}" method="post" class="d-none" id="logout-form">@csrf</form>
