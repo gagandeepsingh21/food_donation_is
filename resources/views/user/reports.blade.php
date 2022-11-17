@@ -50,33 +50,7 @@
     </div>
 </div><br><br><br><br>
 
-{{-- <div class="container box">
-    <h4 style="text-align: center;">Organizations Posts Report </h4><br>
-    <div class="table-responsive">
-<table id="report" class="table table-striped table-hover table-bordered">
-    
-        <thead>
-            
-            <tr> 
-                 <th scope="col">Image</th>
-                <th scope="col">Donors name</th>
-                <th scope="col">Donation Title</th>
-                <th scope="col">Role</th>
-                <th scope="col">Donation Type</th>
-                <th scope="col">Meals Donated</th>
-                <th scope="col"> Donor's Message</th>
-                <th scope="col">Phone number</th>
-                <th scope="col">Date Donated</th>
-                <th scope="col">Status</th>
-              
-            </tr>
-        </thead>
-        <tbody>
-           
-           
-        </tbody>
-        
-    </table> --}}
+
     </div>
 </div>
 
@@ -118,65 +92,12 @@
                 buttons: [
                     'pdf','excel','print'
                 ],
-
-                lengthMenu: [ [10, 25, 50, -1], [5, 10, 25, "All"]],
-
-        
-
-                
+    
             });
         });
     </script>
 
-    {{-- <script>
-        $(document).ready( function(){
-            $('#report').DataTable({
-                processing:true,
-                //serverSide:true,
-                paging:true,
-                orderClasses:false,
-                dom:'Blfrtip',
-                responsive:true,
-                ajax:"{{ route('user.reports') }}",
-                
-
-                columns:[
-                // {data: 'image'},
-                // {data: 'Name'},
-                // {data: 'Role'},
-                // {data: 'dtitle'},
-                // {data: 'description'},
-                // {data: 'dquantity'},
-                // {data: 'pnumber'},
-                // {data: 'location'},
-                // {data: 'date'},
-                // {data: 'isset'},
-                
-                {data: 'image'},
-                {data: 'Name'},
-                {data: 'Dtitle'},
-                {data: 'Role'},
-                {data: 'foodtype'},
-                {data: 'qmeals'},
-                {data: 'message'},
-                {data: 'pnum'},
-                {data: 'date'},
-                {data: 'dstatus'}
-            
-            ],
-                
-           
-                buttons: [
-                    'pdf','excel','print'
-                ]
-            
-
-        
-
-                
-            });
-        });
-    </script> --}}
+   
 
  @endsection
 

@@ -87,46 +87,7 @@
 
  @section('javascripts')
 
-     
-     {{-- <script>
-        $(document).ready( function(){
-            $('#example').DataTable({
-                 processing:true,
-                // serverSide:true,
-                paging:true,
-                orderClasses:false,
-                dom:'Blfrtip',
-                responsive:true,
-                
-                ajax:"{{ route('user.reports') }}",
-                
 
-                columns:[
-                {data: 'image'},
-                {data: 'Name'},
-                {data: 'Dtitle'},
-                {data: 'Role'},
-                {data: 'foodtype'},
-                {data: 'qmeals'},
-                {data: 'message'},
-                {data: 'pnum'},
-                {data: 'date'},
-                {data: 'dstatus'}
-            ],
-                
-           
-                buttons: [
-                    'pdf','excel','print'
-                ],
-
-                lengthMenu: [ [10, 25, 50, -1], [5, 10, 25, "All"]],
-
-        
-
-                
-            });
-        });
-    </script> --}}
 
     <script>
         $(document).ready( function(){
@@ -152,16 +113,7 @@
                 {data: 'date'},
                 {data: 'isset'},
                 
-                // {data: 'image'},
-                // {data: 'Name'},
-                // {data: 'Dtitle'},
-                // {data: 'Role'},
-                // {data: 'foodtype'},
-                // {data: 'qmeals'},
-                // {data: 'message'},
-                // {data: 'pnum'},
-                // {data: 'date'},
-                // {data: 'dstatus'}
+
             
             ],
                 
