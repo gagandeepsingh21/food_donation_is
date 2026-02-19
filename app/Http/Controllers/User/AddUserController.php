@@ -34,6 +34,6 @@ class AddUserController extends Controller
               return redirect()->back()->with('success','Admin created successfully!');
           }else{
               return redirect()->back()->with('fail','Something went wrong, failed to register');
-          }
+          }        
     }
 }
